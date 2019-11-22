@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name PacketVis_Footprints)(type KiCad)(uri ${KIPRJMOD}/Libraries/PacketVis_Footprints.pretty)(options "")(descr ""))
+)
