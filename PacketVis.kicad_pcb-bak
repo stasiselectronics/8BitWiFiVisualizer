@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 15)
+    (drawings 16)
     (tracks 245)
     (zones 0)
     (modules 36)
@@ -1545,6 +1545,9 @@
     )
   )
 
+  (gr_text "PacketVis Revision A02" (at 222.18 115.5) (layer F.Mask)
+    (effects (font (size 1.25 1.35) (thickness 0.15)))
+  )
   (gr_circle (center 187.18 79) (end 188.18 79) (layer F.Mask) (width 2) (tstamp 5DD817AB))
   (gr_circle (center 235.68 79) (end 236.68 79) (layer F.Mask) (width 2))
   (gr_text GND (at 188.43 99) (layer F.SilkS)
