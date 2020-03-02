@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:beginner_project_1-cache
 EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
@@ -296,7 +295,7 @@ U 1 1 5DD0EBF3
 P 13750 4150
 F 0 "U2" H 13750 4931 50  0000 C CNN
 F 1 "74HC595" H 13750 4840 50  0000 C CNN
-F 2 "beginner_project_1_footprint_library:SOIC-16" H 13750 4150 50  0001 C CNN
+F 2 "PacketVis_Footprints:SOIC-16" H 13750 4150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 13750 4150 50  0001 C CNN
 F 4 "SN74HC595DR" H 13750 4150 50  0001 C CNN "Manufacturer PN"
 	1    13750 4150
@@ -384,7 +383,7 @@ U 1 1 5DD49FC0
 P 9350 2200
 F 0 "SW1" H 9350 2485 50  0000 C CNN
 F 1 "SW_Push_Dual" H 9350 2394 50  0000 C CNN
-F 2 "beginner_project_1_footprint_library:PTS645SK50SMTR92 LFS" H 9350 2400 50  0001 C CNN
+F 2 "PacketVis_Footprints:PTS645SK50SMTR92 LFS" H 9350 2400 50  0001 C CNN
 F 3 "~" H 9350 2400 50  0001 C CNN
 F 4 "PTS645SK50SMTR92 LFS" H 9350 2200 50  0001 C CNN "Manufacturer PN"
 	1    9350 2200
@@ -440,12 +439,12 @@ $EndComp
 Wire Wire Line
 	8850 1450 8850 1700
 $Comp
-L beginner_project_1_schematic_library:ESP-WROOM-02D U3
+L PacketVis_Schematic_Library:ESP-WROOM-02D U3
 U 1 1 5DD683D4
 P 3300 5650
 F 0 "U3" H 3675 7065 50  0000 C CNN
 F 1 "ESP-WROOM-02D" H 3675 6974 50  0000 C CNN
-F 2 "beginner_project_1_footprint_library:ESP-WROOM-02D" H 3350 6950 50  0001 C CNN
+F 2 "PacketVis_Footprints:ESP-WROOM-02D" H 3350 6950 50  0001 C CNN
 F 3 "https://www.espressif.com/sites/default/files/documentation/esp-wroom-02u_esp-wroom-02d_datasheet_en.pdf" H 3350 6950 50  0001 C CNN
 F 4 "ESP-WROOM-02D" H 3300 5650 50  0001 C CNN "Manufacturer PN"
 	1    3300 5650
@@ -970,7 +969,7 @@ U 1 1 5DD736E2
 P 10100 5350
 F 0 "SW2" H 10100 5585 50  0000 C CNN
 F 1 "SW_SPST" H 10100 5494 50  0000 C CNN
-F 2 "beginner_project_1_footprint_library:PTS636_SM25F_SMTR_LFS" H 10100 5350 50  0001 C CNN
+F 2 "PacketVis_Footprints:PTS636_SM25F_SMTR_LFS" H 10100 5350 50  0001 C CNN
 F 3 "file:///C:/Users/A552123/Documents/KiCad%20Projects/beginner_project_1/beginner_project_1_footprint_library.pretty/datasheet.pdf" H 10100 5350 50  0001 C CNN
 F 4 "PTS636 SM25F SMTR LFS" H 10100 5350 50  0001 C CNN "Manufacturer PN"
 	1    10100 5350
@@ -982,7 +981,7 @@ U 1 1 5DD75349
 P 8050 5250
 F 0 "SW3" H 8050 5485 50  0000 C CNN
 F 1 "SW_SPST" H 8050 5394 50  0000 C CNN
-F 2 "beginner_project_1_footprint_library:PTS636_SM25F_SMTR_LFS" H 8050 5250 50  0001 C CNN
+F 2 "PacketVis_Footprints:PTS636_SM25F_SMTR_LFS" H 8050 5250 50  0001 C CNN
 F 3 "file:///C:/Users/A552123/Documents/KiCad%20Projects/beginner_project_1/beginner_project_1_footprint_library.pretty/datasheet.pdf" H 8050 5250 50  0001 C CNN
 F 4 "PTS636 SM25F SMTR LFS" H 8050 5250 50  0001 C CNN "Manufacturer PN"
 	1    8050 5250
