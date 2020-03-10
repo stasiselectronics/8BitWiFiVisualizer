@@ -1041,19 +1041,6 @@ Text Notes 7000 6350 0    50   ~ 0
 It is recommended that users do not solder Pad 19 to the base board. \nIf users do want to solder it, they need to ensure that the correct quantity \nof soldering paste is applied.
 Wire Wire Line
 	1400 1200 1700 1200
-$Comp
-L Connector_Generic:Conn_01x03 J2
-U 1 1 5DEB74FA
-P 950 4750
-F 0 "J2" H 868 5067 50  0000 C CNN
-F 1 "Conn_01x03" H 868 4976 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 950 4750 50  0001 C CNN
-F 3 "~" H 950 4750 50  0001 C CNN
-	1    950  4750
-	-1   0    0    -1  
-$EndComp
-Wire Notes Line
-	5100 3400 5100 3350
 Wire Wire Line
 	5100 6900 5100 7000
 Wire Wire Line
@@ -1084,4 +1071,32 @@ Text Notes 2250 3100 0    100  ~ 20
 ESP8266 MCU
 Text Notes 8800 3700 0    100  ~ 20
 LEDs
+Wire Notes Line
+	5100 3400 5100 3350
+$Comp
+L Connector_Generic:Conn_01x04 J2
+U 1 1 5E688389
+P 950 4650
+F 0 "J2" H 868 4967 50  0000 C CNN
+F 1 "Conn_01x04" H 868 4876 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 950 4650 50  0001 C CNN
+F 3 "~" H 950 4650 50  0001 C CNN
+	1    950  4650
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 4550 1600 4550
+Wire Wire Line
+	1600 4550 1600 4450
+$Comp
+L power:+5V #PWR?
+U 1 1 5E6A2124
+P 1600 4450
+F 0 "#PWR?" H 1600 4300 50  0001 C CNN
+F 1 "+5V" H 1615 4623 50  0000 C CNN
+F 2 "" H 1600 4450 50  0001 C CNN
+F 3 "" H 1600 4450 50  0001 C CNN
+	1    1600 4450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
