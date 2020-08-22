@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:PacketVis-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -306,19 +305,6 @@ Wire Wire Line
 	9400 2400 9900 2400
 Wire Wire Line
 	9400 2500 9900 2500
-$Comp
-L power:+3.3V #PWR011
-U 1 1 5DD1602A
-P 8450 1500
-F 0 "#PWR011" H 8450 1350 50  0001 C CNN
-F 1 "+3.3V" H 8465 1673 50  0000 C CNN
-F 2 "" H 8450 1500 50  0001 C CNN
-F 3 "" H 8450 1500 50  0001 C CNN
-	1    8450 1500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8450 1550 8450 1500
 Text Label 7500 5250 1    50   ~ 0
 LED_1
 $Comp
@@ -510,17 +496,6 @@ F 2 "Resistor_SMD:R_0805_2012Metric" V 7480 2100 50  0001 C CNN
 F 3 "~" H 7550 2100 50  0001 C CNN
 F 4 "RC0805JR-0710KL" H 7550 2100 50  0001 C CNN "Manufacturer PN"
 	1    7550 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR013
-U 1 1 5DD54867
-P 7550 1850
-F 0 "#PWR013" H 7550 1700 50  0001 C CNN
-F 1 "+3.3V" H 7565 2023 50  0000 C CNN
-F 2 "" H 7550 1850 50  0001 C CNN
-F 3 "" H 7550 1850 50  0001 C CNN
-	1    7550 1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -720,8 +695,8 @@ Wire Wire Line
 	3250 4400 4200 4400
 Wire Wire Line
 	4200 4400 4200 4500
-Text Notes 3400 4400 0    50   ~ 0
-External pull down for GPIO15 for boot options
+Text Notes 4300 4700 0    50   ~ 0
+External pull down on GPIO15\nfor boot options
 Wire Wire Line
 	1800 3900 2300 3900
 Text Label 1800 3900 0    50   ~ 0
@@ -1043,16 +1018,12 @@ Wire Wire Line
 	1400 1200 1700 1200
 Wire Wire Line
 	5100 6900 5100 7000
-Wire Wire Line
-	9000 1550 9000 1600
-Wire Wire Line
-	8450 1550 9000 1550
 $Comp
 L 74xx:74HC595 U2
 U 1 1 5DD0EBF3
 P 9000 2200
-F 0 "U2" H 9000 2981 50  0000 C CNN
-F 1 "74HC595" H 9000 2890 50  0000 C CNN
+F 0 "U2" H 9450 3000 50  0000 C CNN
+F 1 "74HC595" H 9450 2900 50  0000 C CNN
 F 2 "PacketVis_Footprints:SOIC-16" H 9000 2200 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 9000 2200 50  0001 C CNN
 F 4 "SN74HC595DR" H 9000 2200 50  0001 C CNN "Manufacturer PN"
@@ -1099,4 +1070,28 @@ F 3 "" H 1600 4450 50  0001 C CNN
 	1    1600 4450
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5F41C719
+P 9000 1500
+F 0 "#PWR?" H 9000 1350 50  0001 C CNN
+F 1 "+5V" H 9015 1673 50  0000 C CNN
+F 2 "" H 9000 1500 50  0001 C CNN
+F 3 "" H 9000 1500 50  0001 C CNN
+	1    9000 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5F41D0EC
+P 7550 1850
+F 0 "#PWR?" H 7550 1700 50  0001 C CNN
+F 1 "+5V" H 7565 2023 50  0000 C CNN
+F 2 "" H 7550 1850 50  0001 C CNN
+F 3 "" H 7550 1850 50  0001 C CNN
+	1    7550 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 1500 9000 1600
 $EndSCHEMATC
