@@ -851,34 +851,6 @@ F 3 "" H 3550 1650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C1
-U 1 1 5E17E0E8
-P 1700 1350
-F 0 "C1" H 1792 1396 50  0000 L CNN
-F 1 "47pF" H 1792 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1700 1350 50  0001 C CNN
-F 3 "~" H 1700 1350 50  0001 C CNN
-F 4 "CC0805JRNPO9BN470" H 1700 1350 50  0001 C CNN "Manufacturer PN"
-	1    1700 1350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1700 1250 1700 1200
-Connection ~ 1700 1200
-$Comp
-L power:GND #PWR04
-U 1 1 5E19F43B
-P 1700 1550
-F 0 "#PWR04" H 1700 1300 50  0001 C CNN
-F 1 "GND" H 1705 1377 50  0001 C CNN
-F 2 "" H 1700 1550 50  0001 C CNN
-F 3 "" H 1700 1550 50  0001 C CNN
-	1    1700 1550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1700 1450 1700 1550
-$Comp
 L Switch:SW_SPST SW2
 U 1 1 5DD736E2
 P 5900 6550
@@ -969,8 +941,6 @@ F 3 "" H 4500 6600 50  0001 C CNN
 $EndComp
 Text Notes 7000 6350 0    50   ~ 0
 It is recommended that users do not solder Pad 19 to the base board. \nIf users do want to solder it, they need to ensure that the correct quantity \nof soldering paste is applied.
-Wire Wire Line
-	1400 1200 1700 1200
 Wire Wire Line
 	5100 6900 5100 7000
 $Comp
@@ -1079,5 +1049,5 @@ $EndComp
 Wire Wire Line
 	10275 5025 10275 5150
 Wire Wire Line
-	1700 1200 2850 1200
+	1400 1200 2850 1200
 $EndSCHEMATC
