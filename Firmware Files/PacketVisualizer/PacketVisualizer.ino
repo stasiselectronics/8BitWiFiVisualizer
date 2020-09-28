@@ -1,10 +1,8 @@
 // Chandler McCowan
-// April 12, 2018
 // Network Traffic Indicator using ESP8266 and 8 LEDs
 
 // TODOs
 // clean up styling of code
-// add ability to auto scale, adjusting to the maximum it ever sees 
 // add ability to switch channels using the button
 
 #include <ESP8266WiFi.h>
@@ -143,7 +141,7 @@ void loop() {
     }
     oldvalue = value;
     
-    // Reset auto ranging every 10 seconds
+    // Reset auto ranging every hour
     if(s_counter>36000){
       max_derrivative = 0;
       s_counter = 0;
