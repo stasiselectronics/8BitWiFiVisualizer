@@ -341,7 +341,7 @@ U 1 1 5DD49FC0
 P 2000 6800
 F 0 "SW1" H 2000 7085 50  0000 C CNN
 F 1 "SW_Push_Dual" H 2000 6994 50  0000 C CNN
-F 2 "PacketVis_Footprints:PTS645SK50SMTR92 LFS" H 2000 7000 50  0001 C CNN
+F 2 "8Bit_WiFi_Visualizer_Footprints:PTS645SK50SMTR92 LFS" H 2000 7000 50  0001 C CNN
 F 3 "~" H 2000 7000 50  0001 C CNN
 F 4 "PTS645SK50SMTR92 LFS" H 2000 6800 50  0001 C CNN "Manufacturer PN"
 	1    2000 6800
@@ -402,7 +402,7 @@ U 1 1 5DD683D4
 P 2400 4850
 F 0 "U3" H 2775 6265 50  0000 C CNN
 F 1 "ESP-WROOM-02D" H 2775 6174 50  0000 C CNN
-F 2 "PacketVis_Footprints:ESP-WROOM-02D" H 2450 6150 50  0001 C CNN
+F 2 "8Bit_WiFi_Visualizer_Footprints:ESP-WROOM-02D" H 2450 6150 50  0001 C CNN
 F 3 "https://www.espressif.com/sites/default/files/documentation/esp-wroom-02u_esp-wroom-02d_datasheet_en.pdf" H 2450 6150 50  0001 C CNN
 F 4 "ESP-WROOM-02D" H 2400 4850 50  0001 C CNN "Manufacturer PN"
 	1    2400 4850
@@ -856,7 +856,7 @@ U 1 1 5DD736E2
 P 5900 6550
 F 0 "SW2" H 5900 6785 50  0000 C CNN
 F 1 "SW_SPST" H 5900 6694 50  0000 C CNN
-F 2 "PacketVis_Footprints:PTS636_SM25F_SMTR_LFS" H 5900 6550 50  0001 C CNN
+F 2 "8Bit_WiFi_Visualizer_Footprints:PTS636_SM25F_SMTR_LFS" H 5900 6550 50  0001 C CNN
 F 3 "file:///C:/Users/A552123/Documents/KiCad%20Projects/beginner_project_1/beginner_project_1_footprint_library.pretty/datasheet.pdf" H 5900 6550 50  0001 C CNN
 F 4 "PTS636 SM25F SMTR LFS" H 5900 6550 50  0001 C CNN "Manufacturer PN"
 	1    5900 6550
@@ -868,7 +868,7 @@ U 1 1 5DD75349
 P 4200 6500
 F 0 "SW3" H 4200 6735 50  0000 C CNN
 F 1 "SW_SPST" H 4200 6644 50  0000 C CNN
-F 2 "PacketVis_Footprints:PTS636_SM25F_SMTR_LFS" H 4200 6500 50  0001 C CNN
+F 2 "8Bit_WiFi_Visualizer_Footprints:PTS636_SM25F_SMTR_LFS" H 4200 6500 50  0001 C CNN
 F 3 "file:///C:/Users/A552123/Documents/KiCad%20Projects/beginner_project_1/beginner_project_1_footprint_library.pretty/datasheet.pdf" H 4200 6500 50  0001 C CNN
 F 4 "PTS636 SM25F SMTR LFS" H 4200 6500 50  0001 C CNN "Manufacturer PN"
 	1    4200 6500
