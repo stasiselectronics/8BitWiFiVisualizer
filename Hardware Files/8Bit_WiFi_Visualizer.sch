@@ -305,7 +305,7 @@ Text Label 8700 1750 0    50   ~ 0
 CLEAR
 Text Label 8700 1650 0    50   ~ 0
 CLOCK
-Text Label 4050 3825 2    50   ~ 0
+Text Label 3600 3875 2    50   ~ 0
 CLOCK
 Text Label 3550 4475 2    50   ~ 0
 DATA
@@ -937,10 +937,10 @@ $EndComp
 Wire Wire Line
 	2950 4375 3950 4375
 $Comp
-L Connector_Generic:Conn_01x01 J1
+L Connector_Generic:Conn_01x01 J3
 U 1 1 5F7C5A4F
 P 12450 1600
-F 0 "J1" H 12530 1642 50  0000 L CNN
+F 0 "J3" H 12530 1642 50  0000 L CNN
 F 1 "Conn_01x01" H 12530 1551 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad" H 12450 1600 50  0001 C CNN
 F 3 "~" H 12450 1600 50  0001 C CNN
@@ -948,10 +948,10 @@ F 3 "~" H 12450 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x01 J2
+L Connector_Generic:Conn_01x01 J4
 U 1 1 5F7C66A3
 P 12450 1800
-F 0 "J2" H 12530 1842 50  0000 L CNN
+F 0 "J4" H 12530 1842 50  0000 L CNN
 F 1 "Conn_01x01" H 12530 1751 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad" H 12450 1800 50  0001 C CNN
 F 3 "~" H 12450 1800 50  0001 C CNN
@@ -959,10 +959,10 @@ F 3 "~" H 12450 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0107
 U 1 1 5F7C69AE
 P 12075 1925
-F 0 "#PWR?" H 12075 1675 50  0001 C CNN
+F 0 "#PWR0107" H 12075 1675 50  0001 C CNN
 F 1 "GND" H 12080 1752 50  0000 C CNN
 F 2 "" H 12075 1925 50  0001 C CNN
 F 3 "" H 12075 1925 50  0001 C CNN
