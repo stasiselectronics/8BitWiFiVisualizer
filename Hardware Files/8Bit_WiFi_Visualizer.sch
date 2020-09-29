@@ -397,7 +397,7 @@ $EndComp
 Wire Wire Line
 	1500 6050 1500 6300
 $Comp
-L PacketVis_Schematic_Library:ESP-WROOM-02D U3
+L 8Bit_WiFi_Visualizer_Schematic_Library:ESP-WROOM-02D U3
 U 1 1 5DD683D4
 P 2400 4850
 F 0 "U3" H 2775 6265 50  0000 C CNN

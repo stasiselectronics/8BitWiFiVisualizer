@@ -1,3 +1,3 @@
 (sym_lib_table
-  (lib (name PacketVis_Schematic_Library)(type Legacy)(uri ${KIPRJMOD}/Libraries/PacketVis_Schematic_Library.lib)(options "")(descr ""))
+  (lib (name 8Bit_WiFi_Visualizer_Schematic_Library)(type Legacy)(uri ${KIPRJMOD}/Libraries/8Bit_WiFi_Visualizer_Schematic_Library.lib)(options "")(descr ""))
 )
