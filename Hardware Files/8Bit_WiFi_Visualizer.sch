@@ -26,7 +26,7 @@ F 3 "~" H 9725 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 9725 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 9725 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 9725 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 9725 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 9725 3875 50  0001 C CNN "Manufacturer"
 	1    9725 3875
 	0    -1   -1   0   
 $EndComp
@@ -41,7 +41,7 @@ F 3 "~" H 9325 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 9325 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 9325 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 9325 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 9325 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 9325 3875 50  0001 C CNN "Manufacturer"
 	1    9325 3875
 	0    -1   -1   0   
 $EndComp
@@ -56,7 +56,7 @@ F 3 "~" H 8925 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 8925 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 8925 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 8925 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 8925 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 8925 3875 50  0001 C CNN "Manufacturer"
 	1    8925 3875
 	0    -1   -1   0   
 $EndComp
@@ -71,7 +71,7 @@ F 3 "~" H 8525 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 8525 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 8525 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 8525 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 8525 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 8525 3875 50  0001 C CNN "Manufacturer"
 	1    8525 3875
 	0    -1   -1   0   
 $EndComp
@@ -86,7 +86,7 @@ F 3 "~" H 8125 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 8125 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 8125 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 8125 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 8125 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 8125 3875 50  0001 C CNN "Manufacturer"
 	1    8125 3875
 	0    -1   -1   0   
 $EndComp
@@ -101,7 +101,7 @@ F 3 "~" H 7725 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 7725 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 7725 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 7725 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 7725 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 7725 3875 50  0001 C CNN "Manufacturer"
 	1    7725 3875
 	0    -1   -1   0   
 $EndComp
@@ -116,7 +116,7 @@ F 3 "~" H 7325 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 7325 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 7325 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 7325 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 7325 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 7325 3875 50  0001 C CNN "Manufacturer"
 	1    7325 3875
 	0    -1   -1   0   
 $EndComp
@@ -198,7 +198,7 @@ F 3 "~" H 10125 3875 50  0001 C CNN
 F 4 "LTST-C150TBKT" H 10125 3875 50  0001 C CNN "Manufacturer PN"
 F 5 "3.2V 1206 LED" H 10125 3875 50  0001 C CNN "Description"
 F 6 "	C125088" H 10125 3875 50  0001 C CNN "LCSC Order Number"
-F 7 "	Lite-On" H 10125 3875 50  0001 C CNN "Manufacturer"
+F 7 "Lite-On" H 10125 3875 50  0001 C CNN "Manufacturer"
 	1    10125 3875
 	0    -1   -1   0   
 $EndComp
@@ -537,10 +537,10 @@ F 0 "J1" H 1532 1967 50  0000 C CNN
 F 1 "USB_B_Micro" H 1532 1876 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:USB_Micro-B_Molex-105017-0001_3D" H 1625 1450 50  0001 C CNN
 F 3 "~" H 1625 1450 50  0001 C CNN
-F 4 "	C136000" H 1475 1500 50  0001 C CNN "Manufacturer PN"
+F 4 "1050170001" H 1475 1500 50  0001 C CNN "Manufacturer PN"
 F 5 "MicroUSB Connector SMD" H 1475 1500 50  0001 C CNN "Description"
-F 6 "	1050170001" H 1475 1500 50  0001 C CNN "LCSC Order Number"
-F 7 "	MOLEX" H 1475 1500 50  0001 C CNN "Manufacturer"
+F 6 "C136000" H 1475 1500 50  0001 C CNN "LCSC Order Number"
+F 7 "MOLEX" H 1475 1500 50  0001 C CNN "Manufacturer"
 	1    1475 1500
 	1    0    0    -1  
 $EndComp
