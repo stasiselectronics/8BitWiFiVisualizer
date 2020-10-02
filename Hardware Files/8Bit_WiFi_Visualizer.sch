@@ -24,6 +24,7 @@ F 1 "LED" V 9673 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9725 3875 50  0001 C CNN
 F 3 "~" H 9725 3875 50  0001 C CNN
 F 4 "" H 9725 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 9725 3875 50  0001 C CNN "Description"
 	1    9725 3875
 	0    -1   -1   0   
 $EndComp
@@ -36,6 +37,7 @@ F 1 "LED" V 9273 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9325 3875 50  0001 C CNN
 F 3 "~" H 9325 3875 50  0001 C CNN
 F 4 "" H 9325 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 9325 3875 50  0001 C CNN "Description"
 	1    9325 3875
 	0    -1   -1   0   
 $EndComp
@@ -48,6 +50,7 @@ F 1 "LED" V 8873 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8925 3875 50  0001 C CNN
 F 3 "~" H 8925 3875 50  0001 C CNN
 F 4 "" H 8925 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 8925 3875 50  0001 C CNN "Description"
 	1    8925 3875
 	0    -1   -1   0   
 $EndComp
@@ -60,6 +63,7 @@ F 1 "LED" V 8473 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8525 3875 50  0001 C CNN
 F 3 "~" H 8525 3875 50  0001 C CNN
 F 4 "" H 8525 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 8525 3875 50  0001 C CNN "Description"
 	1    8525 3875
 	0    -1   -1   0   
 $EndComp
@@ -72,6 +76,7 @@ F 1 "LED" V 8073 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8125 3875 50  0001 C CNN
 F 3 "~" H 8125 3875 50  0001 C CNN
 F 4 "" H 8125 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 8125 3875 50  0001 C CNN "Description"
 	1    8125 3875
 	0    -1   -1   0   
 $EndComp
@@ -84,6 +89,7 @@ F 1 "LED" V 7673 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7725 3875 50  0001 C CNN
 F 3 "~" H 7725 3875 50  0001 C CNN
 F 4 "" H 7725 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 7725 3875 50  0001 C CNN "Description"
 	1    7725 3875
 	0    -1   -1   0   
 $EndComp
@@ -96,6 +102,7 @@ F 1 "LED" V 7273 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7325 3875 50  0001 C CNN
 F 3 "~" H 7325 3875 50  0001 C CNN
 F 4 "" H 7325 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 7325 3875 50  0001 C CNN "Description"
 	1    7325 3875
 	0    -1   -1   0   
 $EndComp
@@ -175,6 +182,7 @@ F 1 "LED" V 10073 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 10125 3875 50  0001 C CNN
 F 3 "~" H 10125 3875 50  0001 C CNN
 F 4 "" H 10125 3875 50  0001 C CNN "Manufacturer PN"
+F 5 "3.2V 1206 LED" H 10125 3875 50  0001 C CNN "Description"
 	1    10125 3875
 	0    -1   -1   0   
 $EndComp
@@ -366,6 +374,7 @@ F 1 "10uF" H 1142 4530 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1050 4575 50  0001 C CNN
 F 3 "~" H 1050 4575 50  0001 C CNN
 F 4 "" H 1050 4575 50  0001 C CNN "Manufacturer PN"
+F 5 "10uF 1206 Capacitor" H 1050 4575 50  0001 C CNN "Description"
 	1    1050 4575
 	1    0    0    -1  
 $EndComp
@@ -378,6 +387,7 @@ F 1 "0.1uF" H 1542 4530 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1450 4575 50  0001 C CNN
 F 3 "~" H 1450 4575 50  0001 C CNN
 F 4 "" H 1450 4575 50  0001 C CNN "Manufacturer PN"
+F 5 "0.1uF 1206 Capacitor" H 1450 4575 50  0001 C CNN "Description"
 	1    1450 4575
 	1    0    0    -1  
 $EndComp
@@ -430,6 +440,7 @@ F 1 "0.1uF" H 6617 1830 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6525 1875 50  0001 C CNN
 F 3 "~" H 6525 1875 50  0001 C CNN
 F 4 "" H 6525 1875 50  0001 C CNN "Manufacturer PN"
+F 5 "0.1uF 1206 Capacitor" H 6525 1875 50  0001 C CNN "Description"
 	1    6525 1875
 	1    0    0    -1  
 $EndComp
@@ -468,6 +479,7 @@ F 1 "10k" H 4020 4480 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3880 4525 50  0001 C CNN
 F 3 "~" H 3950 4525 50  0001 C CNN
 F 4 "" H 3950 4525 50  0001 C CNN "Manufacturer PN"
+F 5 "10k 1206 Resistor" H 3950 4525 50  0001 C CNN "Description"
 	1    3950 4525
 	-1   0    0    -1  
 $EndComp
@@ -499,6 +511,7 @@ F 1 "USB_B_Micro" H 1532 1876 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:USB_Micro-B_Molex-105017-0001_3D" H 1625 1450 50  0001 C CNN
 F 3 "~" H 1625 1450 50  0001 C CNN
 F 4 "" H 1475 1500 50  0001 C CNN "Manufacturer PN"
+F 5 "MicroUSB Connector SMD" H 1475 1500 50  0001 C CNN "Description"
 	1    1475 1500
 	1    0    0    -1  
 $EndComp
@@ -558,6 +571,7 @@ F 1 "3.3V 1A" H 2900 1451 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 2900 1500 50  0001 C CNN
 F 3 "https://www.diodes.com/assets/Datasheets/AP2114.pdf" H 3000 1050 50  0001 C CNN
 F 4 "" H 2900 1300 50  0001 C CNN "Manufacturer PN"
+F 5 "3.3V 1A SOT223 LDO Linear Regulator" H 2900 1300 50  0001 C CNN "Description"
 	1    2900 1300
 	1    0    0    -1  
 $EndComp
@@ -588,6 +602,7 @@ F 1 "4.7uF" H 2292 1455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 2200 1500 50  0001 C CNN
 F 3 "~" H 2200 1500 50  0001 C CNN
 F 4 "" H 2200 1500 50  0001 C CNN "Manufacturer PN"
+F 5 "4.7 uF 1206 Capacitor" H 2200 1500 50  0001 C CNN "Description"
 	1    2200 1500
 	1    0    0    -1  
 $EndComp
@@ -630,6 +645,7 @@ F 1 "4.7uF" H 3642 1455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3550 1500 50  0001 C CNN
 F 3 "~" H 3550 1500 50  0001 C CNN
 F 4 "" H 3550 1500 50  0001 C CNN "Manufacturer PN"
+F 5 "4.7 uF 1206 Capacitor" H 3550 1500 50  0001 C CNN "Description"
 	1    3550 1500
 	1    0    0    -1  
 $EndComp
@@ -685,6 +701,7 @@ F 1 "10k" H 5345 1330 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 5205 1375 50  0001 C CNN
 F 3 "~" H 5275 1375 50  0001 C CNN
 F 4 "" H 5275 1375 50  0001 C CNN "Manufacturer PN"
+F 5 "10k 1206 Resistor" H 5275 1375 50  0001 C CNN "Description"
 	1    5275 1375
 	-1   0    0    -1  
 $EndComp
@@ -730,6 +747,7 @@ F 1 "74HC595" H 10025 2425 50  0000 C CNN
 F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 9725 1850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 9725 1850 50  0001 C CNN
 F 4 "" H 9725 1850 50  0001 C CNN "Manufacturer PN"
+F 5 "Shift Register SOIC 16" H 9725 1850 50  0001 C CNN "Description"
 	1    9725 1850
 	1    0    0    -1  
 $EndComp
@@ -755,6 +773,7 @@ F 0 "J2" H 5143 6617 50  0000 C CNN
 F 1 "Conn_01x04" H 5143 6526 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 5225 6300 50  0001 C CNN
 F 3 "~" H 5225 6300 50  0001 C CNN
+F 4 "2.54mm Male PCB Header" H 5225 6300 50  0001 C CNN "Description"
 	1    5225 6300
 	-1   0    0    -1  
 $EndComp
@@ -782,6 +801,7 @@ F 1 "10k" H 8745 2255 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8605 2300 50  0001 C CNN
 F 3 "~" H 8675 2300 50  0001 C CNN
 F 4 "" H 8675 2300 50  0001 C CNN "Manufacturer PN"
+F 5 "10k 1206 Resistor" H 8675 2300 50  0001 C CNN "Description"
 	1    8675 2300
 	-1   0    0    1   
 $EndComp
@@ -907,6 +927,7 @@ F 1 "ESP-WROOM-02D" H 2475 6149 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:ESP-WROOM-02D" H 2150 6125 50  0001 C CNN
 F 3 "https://www.espressif.com/sites/default/files/documentation/esp-wroom-02u_esp-wroom-02d_datasheet_en.pdf" H 2150 6125 50  0001 C CNN
 F 4 "ESP-WROOM-02D" H 2100 4825 50  0001 C CNN "Manufacturer PN"
+F 5 "ESP 8266 SMD Module" H 2100 4825 50  0001 C CNN "Description"
 	1    2100 4825
 	1    0    0    -1  
 $EndComp
@@ -920,6 +941,7 @@ F 0 "J3" H 12530 1642 50  0000 L CNN
 F 1 "Conn_01x01" H 12530 1551 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad" H 12450 1600 50  0001 C CNN
 F 3 "~" H 12450 1600 50  0001 C CNN
+F 4 "Mounting Holes" H 12450 1600 50  0001 C CNN "Description"
 	1    12450 1600
 	1    0    0    -1  
 $EndComp
@@ -931,6 +953,7 @@ F 0 "J4" H 12530 1842 50  0000 L CNN
 F 1 "Conn_01x01" H 12530 1751 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad" H 12450 1800 50  0001 C CNN
 F 3 "~" H 12450 1800 50  0001 C CNN
+F 4 "Mounting Holes" H 12450 1800 50  0001 C CNN "Description"
 	1    12450 1800
 	1    0    0    -1  
 $EndComp
@@ -963,6 +986,7 @@ F 1 "10k" H 6595 1330 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6455 1375 50  0001 C CNN
 F 3 "~" H 6525 1375 50  0001 C CNN
 F 4 "" H 6525 1375 50  0001 C CNN "Manufacturer PN"
+F 5 "10k 1206 Resistor" H 6525 1375 50  0001 C CNN "Description"
 	1    6525 1375
 	-1   0    0    -1  
 $EndComp
@@ -975,6 +999,7 @@ F 1 "10k" H 2545 6405 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2405 6450 50  0001 C CNN
 F 3 "~" H 2475 6450 50  0001 C CNN
 F 4 "" H 2475 6450 50  0001 C CNN "Manufacturer PN"
+F 5 "10k 1206 Resistor" H 2475 6450 50  0001 C CNN "Description"
 	1    2475 6450
 	1    0    0    -1  
 $EndComp
