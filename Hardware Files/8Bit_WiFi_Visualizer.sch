@@ -23,7 +23,7 @@ F 0 "D2" V 9764 3758 50  0000 R CNN
 F 1 "LED" V 9673 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9725 3875 50  0001 C CNN
 F 3 "~" H 9725 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 9725 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 9725 3875 50  0001 C CNN "Manufacturer PN"
 	1    9725 3875
 	0    -1   -1   0   
 $EndComp
@@ -35,7 +35,7 @@ F 0 "D3" V 9364 3758 50  0000 R CNN
 F 1 "LED" V 9273 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9325 3875 50  0001 C CNN
 F 3 "~" H 9325 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 9325 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 9325 3875 50  0001 C CNN "Manufacturer PN"
 	1    9325 3875
 	0    -1   -1   0   
 $EndComp
@@ -47,7 +47,7 @@ F 0 "D4" V 8964 3758 50  0000 R CNN
 F 1 "LED" V 8873 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8925 3875 50  0001 C CNN
 F 3 "~" H 8925 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 8925 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 8925 3875 50  0001 C CNN "Manufacturer PN"
 	1    8925 3875
 	0    -1   -1   0   
 $EndComp
@@ -59,7 +59,7 @@ F 0 "D5" V 8564 3758 50  0000 R CNN
 F 1 "LED" V 8473 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8525 3875 50  0001 C CNN
 F 3 "~" H 8525 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 8525 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 8525 3875 50  0001 C CNN "Manufacturer PN"
 	1    8525 3875
 	0    -1   -1   0   
 $EndComp
@@ -71,7 +71,7 @@ F 0 "D6" V 8164 3758 50  0000 R CNN
 F 1 "LED" V 8073 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8125 3875 50  0001 C CNN
 F 3 "~" H 8125 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 8125 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 8125 3875 50  0001 C CNN "Manufacturer PN"
 	1    8125 3875
 	0    -1   -1   0   
 $EndComp
@@ -83,7 +83,7 @@ F 0 "D7" V 7764 3758 50  0000 R CNN
 F 1 "LED" V 7673 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7725 3875 50  0001 C CNN
 F 3 "~" H 7725 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 7725 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 7725 3875 50  0001 C CNN "Manufacturer PN"
 	1    7725 3875
 	0    -1   -1   0   
 $EndComp
@@ -95,7 +95,7 @@ F 0 "D8" V 7364 3758 50  0000 R CNN
 F 1 "LED" V 7273 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7325 3875 50  0001 C CNN
 F 3 "~" H 7325 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 7325 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 7325 3875 50  0001 C CNN "Manufacturer PN"
 	1    7325 3875
 	0    -1   -1   0   
 $EndComp
@@ -174,7 +174,7 @@ F 0 "D1" V 10164 3758 50  0000 R CNN
 F 1 "LED" V 10073 3758 50  0000 R CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 10125 3875 50  0001 C CNN
 F 3 "~" H 10125 3875 50  0001 C CNN
-F 4 "LH R974-LP-1" H 10125 3875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 10125 3875 50  0001 C CNN "Manufacturer PN"
 	1    10125 3875
 	0    -1   -1   0   
 $EndComp
@@ -215,7 +215,7 @@ F 0 "SW1" H 2975 7085 50  0000 C CNN
 F 1 "SW_Push_Dual" H 2975 6994 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:PTS645SK50SMTR92LFS" H 2975 7000 50  0001 C CNN
 F 3 "~" H 2975 7000 50  0001 C CNN
-F 4 "PTS645SK50SMTR92 LFS" H 2975 6800 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 2975 6800 50  0001 C CNN "Manufacturer PN"
 	1    2975 6800
 	1    0    0    -1  
 $EndComp
@@ -365,7 +365,7 @@ F 0 "C3" H 1142 4621 50  0000 L CNN
 F 1 "10uF" H 1142 4530 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1050 4575 50  0001 C CNN
 F 3 "~" H 1050 4575 50  0001 C CNN
-F 4 "CC0805ZKY5V5BB106" H 1050 4575 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 1050 4575 50  0001 C CNN "Manufacturer PN"
 	1    1050 4575
 	1    0    0    -1  
 $EndComp
@@ -377,7 +377,7 @@ F 0 "C4" H 1542 4621 50  0000 L CNN
 F 1 "0.1uF" H 1542 4530 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1450 4575 50  0001 C CNN
 F 3 "~" H 1450 4575 50  0001 C CNN
-F 4 "CC0805ZRY5V9BB104" H 1450 4575 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 1450 4575 50  0001 C CNN "Manufacturer PN"
 	1    1450 4575
 	1    0    0    -1  
 $EndComp
@@ -429,7 +429,7 @@ F 0 "C5" H 6617 1921 50  0000 L CNN
 F 1 "0.1uF" H 6617 1830 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6525 1875 50  0001 C CNN
 F 3 "~" H 6525 1875 50  0001 C CNN
-F 4 "CC0805ZRY5V9BB104" H 6525 1875 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 6525 1875 50  0001 C CNN "Manufacturer PN"
 	1    6525 1875
 	1    0    0    -1  
 $EndComp
@@ -467,7 +467,7 @@ F 0 "R4" H 4020 4571 50  0000 L CNN
 F 1 "10k" H 4020 4480 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3880 4525 50  0001 C CNN
 F 3 "~" H 3950 4525 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 3950 4525 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 3950 4525 50  0001 C CNN "Manufacturer PN"
 	1    3950 4525
 	-1   0    0    -1  
 $EndComp
@@ -498,7 +498,7 @@ F 0 "J1" H 1532 1967 50  0000 C CNN
 F 1 "USB_B_Micro" H 1532 1876 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:USB_Micro-B_Molex-105017-0001_3D" H 1625 1450 50  0001 C CNN
 F 3 "~" H 1625 1450 50  0001 C CNN
-F 4 "1050170001" H 1475 1500 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 1475 1500 50  0001 C CNN "Manufacturer PN"
 	1    1475 1500
 	1    0    0    -1  
 $EndComp
@@ -557,7 +557,7 @@ F 0 "U1" H 2900 1542 50  0000 C CNN
 F 1 "3.3V 1A" H 2900 1451 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 2900 1500 50  0001 C CNN
 F 3 "https://www.diodes.com/assets/Datasheets/AP2114.pdf" H 3000 1050 50  0001 C CNN
-F 4 "AP2114H-3.3TRG1" H 2900 1300 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 2900 1300 50  0001 C CNN "Manufacturer PN"
 	1    2900 1300
 	1    0    0    -1  
 $EndComp
@@ -587,7 +587,7 @@ F 0 "C1" H 2292 1546 50  0000 L CNN
 F 1 "4.7uF" H 2292 1455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 2200 1500 50  0001 C CNN
 F 3 "~" H 2200 1500 50  0001 C CNN
-F 4 "CC0805ZRY5V6BB475" H 2200 1500 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 2200 1500 50  0001 C CNN "Manufacturer PN"
 	1    2200 1500
 	1    0    0    -1  
 $EndComp
@@ -629,7 +629,7 @@ F 0 "C2" H 3642 1546 50  0000 L CNN
 F 1 "4.7uF" H 3642 1455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3550 1500 50  0001 C CNN
 F 3 "~" H 3550 1500 50  0001 C CNN
-F 4 "CC0805ZRY5V6BB475" H 3550 1500 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 3550 1500 50  0001 C CNN "Manufacturer PN"
 	1    3550 1500
 	1    0    0    -1  
 $EndComp
@@ -654,7 +654,7 @@ F 0 "SW2" H 7150 1885 50  0000 C CNN
 F 1 "SW_SPST" H 7150 1794 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:PTS636_SM25F_SMTR_LFS" H 7150 1650 50  0001 C CNN
 F 3 "file:///C:/Users/A552123/Documents/KiCad%20Projects/beginner_project_1/beginner_project_1_footprint_library.pretty/datasheet.pdf" H 7150 1650 50  0001 C CNN
-F 4 "PTS636 SM25F SMTR LFS" H 7150 1650 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 7150 1650 50  0001 C CNN "Manufacturer PN"
 	1    7150 1650
 	1    0    0    -1  
 $EndComp
@@ -666,7 +666,7 @@ F 0 "SW3" H 5625 1935 50  0000 C CNN
 F 1 "SW_SPST" H 5625 1844 50  0000 C CNN
 F 2 "8Bit_WiFi_Visualizer_Footprints:PTS636_SM25F_SMTR_LFS" H 5625 1700 50  0001 C CNN
 F 3 "file:///C:/Users/A552123/Documents/KiCad%20Projects/beginner_project_1/beginner_project_1_footprint_library.pretty/datasheet.pdf" H 5625 1700 50  0001 C CNN
-F 4 "PTS636 SM25F SMTR LFS" H 5625 1700 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 5625 1700 50  0001 C CNN "Manufacturer PN"
 	1    5625 1700
 	1    0    0    -1  
 $EndComp
@@ -684,7 +684,7 @@ F 0 "R1" H 5345 1421 50  0000 L CNN
 F 1 "10k" H 5345 1330 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 5205 1375 50  0001 C CNN
 F 3 "~" H 5275 1375 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 5275 1375 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 5275 1375 50  0001 C CNN "Manufacturer PN"
 	1    5275 1375
 	-1   0    0    -1  
 $EndComp
@@ -729,7 +729,7 @@ F 0 "U2" H 10025 2525 50  0000 C CNN
 F 1 "74HC595" H 10025 2425 50  0000 C CNN
 F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 9725 1850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 9725 1850 50  0001 C CNN
-F 4 "SN74HC595DR" H 9725 1850 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 9725 1850 50  0001 C CNN "Manufacturer PN"
 	1    9725 1850
 	1    0    0    -1  
 $EndComp
@@ -781,7 +781,7 @@ F 0 "R3" H 8745 2346 50  0000 L CNN
 F 1 "10k" H 8745 2255 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8605 2300 50  0001 C CNN
 F 3 "~" H 8675 2300 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 8675 2300 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 8675 2300 50  0001 C CNN "Manufacturer PN"
 	1    8675 2300
 	-1   0    0    1   
 $EndComp
@@ -962,7 +962,7 @@ F 0 "R2" H 6595 1421 50  0000 L CNN
 F 1 "10k" H 6595 1330 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6455 1375 50  0001 C CNN
 F 3 "~" H 6525 1375 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 6525 1375 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 6525 1375 50  0001 C CNN "Manufacturer PN"
 	1    6525 1375
 	-1   0    0    -1  
 $EndComp
@@ -974,7 +974,7 @@ F 0 "R5" H 2545 6496 50  0000 L CNN
 F 1 "10k" H 2545 6405 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2405 6450 50  0001 C CNN
 F 3 "~" H 2475 6450 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 2475 6450 50  0001 C CNN "Manufacturer PN"
+F 4 "" H 2475 6450 50  0001 C CNN "Manufacturer PN"
 	1    2475 6450
 	1    0    0    -1  
 $EndComp
