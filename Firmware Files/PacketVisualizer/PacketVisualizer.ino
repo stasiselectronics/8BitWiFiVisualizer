@@ -10,9 +10,9 @@
 #include <EEPROM.h>
 
 // Shift Register GPIO Pin Definitions
-#define LATCH 10 //Pin D0
-#define CLOCK 2  //Pin D1
-#define DATA 4   //Pin D2
+#define LATCH 5 //Pin D0
+#define CLOCK 4  //Pin D1
+#define DATA 16   //Pin D2
 #define SWITCH 14
 #define CLEAR 12
 #define OUTPUTENABLE 13
@@ -71,6 +71,7 @@ void setup() {
   pinMode(CLEAR, OUTPUT);
   pinMode(OUTPUTENABLE, OUTPUT);
   digitalWrite(OUTPUTENABLE, HIGH);
+  digitalWrite(CLEAR, HIGH);
   digitalWrite(CLEAR, LOW);
   digitalWrite(CLEAR, HIGH);
   digitalWrite(OUTPUTENABLE, LOW);
@@ -132,9 +133,10 @@ void loop() {
     }
     if(oldvalue!=value){
       // Display Value
+      
     digitalWrite(OUTPUTENABLE, HIGH);
     digitalWrite(LATCH, LOW);
-    shiftOut(DATA, CLOCK, LSBFIRST, ~value);
+    shiftOut(DATA, CLOCK, MSBFIRST, value);
     delay(1);
     digitalWrite(LATCH, HIGH);
     digitalWrite(OUTPUTENABLE, LOW);
