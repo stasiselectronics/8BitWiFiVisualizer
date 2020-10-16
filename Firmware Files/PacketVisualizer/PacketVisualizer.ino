@@ -10,9 +10,9 @@
 #include <EEPROM.h>
 
 // Shift Register GPIO Pin Definitions
-#define LATCH 5 //Pin D0
-#define CLOCK 4  //Pin D1
-#define DATA 16   //Pin D2
+#define LATCH 5 
+#define CLOCK 4  
+#define DATA 16   
 #define SWITCH 14
 #define CLEAR 12
 #define OUTPUTENABLE 13
@@ -32,7 +32,7 @@ double        filter_alpha = 0.250;
 double        max_derrivative = 0;
 
 // Display Value
-int value = 1;
+byte value = 1;
 
 // Button ISR variables
 unsigned long buttonTimer1  = 0;
@@ -70,15 +70,12 @@ void setup() {
   digitalWrite(LATCH, HIGH);
   pinMode(CLEAR, OUTPUT);
   pinMode(OUTPUTENABLE, OUTPUT);
-  digitalWrite(OUTPUTENABLE, HIGH);
   digitalWrite(CLEAR, HIGH);
   digitalWrite(CLEAR, LOW);
   digitalWrite(CLEAR, HIGH);
-  digitalWrite(OUTPUTENABLE, LOW);
   //pinMode(SWITCH, INPUT_PULLUP);
   //attachInterrupt(digitalPinToInterrupt(SWITCH), button_ISR, CHANGE);
   Serial.println("Starting Packet Counting");
-  
 }
 
 void loop() {
@@ -102,44 +99,49 @@ void loop() {
     if(derrivative < max_derrivative * 0.125)
     {
       value = 1; //  |-------
+      analogWrite(OUTPUTENABLE, 1020);
     }
     else if (derrivative < max_derrivative * 0.25)
     {
       value = 3; //  ||------
+      analogWrite(OUTPUTENABLE, 1010);
     }
     else if (derrivative < max_derrivative * 0.375)
     {
       value = 7; //  |||-----
+      analogWrite(OUTPUTENABLE, 1000);
     }
     else if (derrivative < max_derrivative * 0.5)
     {
       value = 15; // ||||----
+      analogWrite(OUTPUTENABLE, 950);
     }
     else if (derrivative < max_derrivative * 0.625)
     {
       value = 31; // |||||---
+      analogWrite(OUTPUTENABLE, 900);
     }
     else if (derrivative < max_derrivative * 0.75)
     {
       value = 63; // ||||||--
+      analogWrite(OUTPUTENABLE, 500);
     }
     else if (derrivative < max_derrivative * 0.875)
     {
       value = 127; // |||||||-
+      analogWrite(OUTPUTENABLE, 300);
     }
     else if (derrivative >= max_derrivative * 0.875)
     {
       value = 255; // ||||||||
+      analogWrite(OUTPUTENABLE, 0);
     }
     if(oldvalue!=value){
       // Display Value
-      
-    digitalWrite(OUTPUTENABLE, HIGH);
-    digitalWrite(LATCH, LOW);
-    shiftOut(DATA, CLOCK, MSBFIRST, value);
-    delay(1);
-    digitalWrite(LATCH, HIGH);
-    digitalWrite(OUTPUTENABLE, LOW);
+      digitalWrite(LATCH, LOW);
+      shiftOut(DATA, CLOCK, MSBFIRST, value);
+      delay(1);
+      digitalWrite(LATCH, HIGH);
     }
     oldvalue = value;
     
