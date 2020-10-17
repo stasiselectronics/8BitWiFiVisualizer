@@ -1,14 +1,25 @@
 // Chandler McCowan
 // Network Traffic Indicator using ESP8266 and 8 LEDs
+// Basic Firmware Version
 
-// TODOs
-// clean up styling of code
+// Use this firmware if you want to manually set the parameters, and not fuss with any automatic settings.
 
+// AP Channel: This is the network channel that the visualizer listens to, it only looks at one channel at a time.
+//             Most people choose their own network's channel, but feel free to play around with which channel you're listening to.
+//             There are 14 total channels, with most regions using channels 1 through 13.
+  const int ap_channel = 1; // Feel free to change!
+  
+// Max Rate: This is the maximum rate of packets per seconds that will be displayed, and will then be divided by 8 to determine
+//           how many LEDs to show based on the current reading. Downloading at 50 megabits per seconds is about 1000 packets per second.
+  const int max_rate = 1000; // Feel free to change! 
+
+// Header files to include
 #include <ESP8266WiFi.h>
 #include <Wire.h>
 #include <EEPROM.h>
 
-// Shift Register GPIO Pin Definitions
+// GPIO Pin Definitions
+// Changing these will affect the board's functionality, do so at your own risk!
 #define LATCH 5 
 #define CLOCK 4  
 #define DATA 16   
@@ -109,8 +120,7 @@ void loop() {
     //Serial.print(derrivative);
     filter_current_output  = filter_alpha*derrivative + (1-filter_alpha)*filter_previous_output;
     filter_previous_output = filter_current_output;
-    //Serial.print(",");
-    Serial.println(filter_current_output);
+    //Serial.print(",");Serial.println(filter_current_output);
     derrivative = filter_current_output;
     
     if(derrivative < max_derrivative * 0.125)
@@ -247,39 +257,4 @@ void change_channel(){
      }
   }
   ESP.reset();
-}
-
-int find_strongest_channel(){
-  int wifi_networks_n = 0;    // Number of wifi networks present, and used to reference details of the networks
-  int max_rssi = -1000; // RSSIs are negative, so initialize to something below any actual network strength
-  int strongest_channel = 0;  // AP Channel that has the strongest RSSI present
-  
-  WiFi.mode(WIFI_STA);
-  WiFi.disconnect();
-  //delay(100);
-  wifi_networks_n = WiFi.scanNetworks();
-
-  if(wifi_networks_n == 0){
-    Serial.println("No Networks Found, that's not right, who doesn't have a WiFi network around?");
-  }
-  else{
-    Serial.print(wifi_networks_n);Serial.println(" networks found");
-    // First Case
-    for (int i = 0; i < wifi_networks_n; ++i) {
-      // Print SSID and RSSI for each network found
-      Serial.print(i + 1);
-      Serial.print(": ");
-      Serial.print(WiFi.SSID(i));
-      Serial.print(" (");
-      Serial.print(WiFi.RSSI(i));
-      Serial.print("; ");
-      Serial.print(WiFi.channel(i));
-      Serial.println(")");
-      if(WiFi.RSSI(i)>max_rssi){
-        strongest_channel = WiFi.channel(i);
-        max_rssi=WiFi.RSSI(i);
-      }
-    }
-  }
-  Serial.print("Strongest Channel is: "); Serial.println(strongest_channel);
 }
