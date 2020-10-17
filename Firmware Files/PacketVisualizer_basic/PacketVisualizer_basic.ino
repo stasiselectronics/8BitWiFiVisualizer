@@ -1,22 +1,32 @@
 // Chandler McCowan
 // Network Traffic Indicator using ESP8266 and 8 LEDs
 // Basic Firmware Version
+// This firmware is intended for the Stasis Electronics 8 Bit WiFi Visualizer board
 
 // Use this firmware if you want to manually set the parameters, and not fuss with any automatic settings.
 
 // AP Channel: This is the network channel that the visualizer listens to, it only looks at one channel at a time.
 //             Most people choose their own network's channel, but feel free to play around with which channel you're listening to.
 //             There are 14 total channels, with most regions using channels 1 through 13.
-  const int ap_channel = 1; // Feel free to change!
+
+  int ap_channel = 1; // Feel free to change!
   
 // Max Rate: This is the maximum rate of packets per seconds that will be displayed, and will then be divided by 8 to determine
-//           how many LEDs to show based on the current reading. Downloading at 50 megabits per seconds is about 1000 packets per second.
-  const int max_rate = 1000; // Feel free to change! 
+//           how many LEDs to show based on the current reading. Downloading at 50 megabits per second is about 1000 packets per second.
+
+  double max_rate = 1000; // packets per second // Feel free to change! 
+
+// Refresh Rate: This is how often the display is updated, and is used in calculating the packets per second.
+
+  int refresh_rate = 100; // ms // Feel free to change!
+
+// LED Brightness: You can use the PWM functionality on the Output Enable pin to set a brightness for the LEDs.
+//                 Use a value between 0 and 1023, where 1023 is "off", and 950 is "dim"
+
+  int led_brightness = 950;
 
 // Header files to include
 #include <ESP8266WiFi.h>
-#include <Wire.h>
-#include <EEPROM.h>
 
 // GPIO Pin Definitions
 // Changing these will affect the board's functionality, do so at your own risk!
@@ -27,234 +37,75 @@
 #define CLEAR 12
 #define OUTPUTENABLE 13
 
-#define disable 0
-#define enable  1
+// variable that is incremented everytime a packet is sniffed
+unsigned volatile long pkts = 0;
 
-#define CHANNEL_ADDR 60
-
-// Mathematic variables to count time and packet change
-unsigned long prevTime    = 0;
-unsigned long curTime     = 0;
-unsigned long pkts        = 0;
-unsigned long oldpkts     = 0;
-double        derrivative = 0;
-double        filter_current_output = 0;
-double        filter_previous_output = 0;
-double        filter_alpha = 0.250;
-double        max_derrivative = 0;
-
-// Display Value
-byte value = 1;
-
-// Button ISR variables
-volatile unsigned long buttonPrevTime  = 0;
-unsigned long button_long_timer  = 0;
-byte          button_flag   = 0;
-bool          button_state  = false;
-bool          button_long_started = false;
-byte          button_short  = 0;
-byte          button_long   = 0;
-
-void ICACHE_RAM_ATTR button_ISR();
-
-unsigned int ap_channel = 1;
-
-// Capture packets and increment variable
+// Call Back function to capture packets and increment variable
 void counter() {
   pkts++;
 }
 
 
 void setup() {
-  
-  EEPROM.begin(512);        //Initialize EEPROM
-  Serial.begin(115200);
-  Serial.print("\n\n\n");
-  ap_channel=EEPROM.read(CHANNEL_ADDR);
+  Serial.begin(115200);                // begin Serial port and set the baud rate to 115200, feel free to change this if you want
+  Serial.print("\n\n\n");              // helps to clear the application dialogue and the ESP8266's boot dialogue
   if(ap_channel<1||ap_channel>14){
     ap_channel=1;
+    Serial.println("AP Channel out of bounds, set ap_channel to something between 1 and 14");
   }
-
-  find_strongest_channel();
   
   // Networking Setup, sets ESP8266 into Promiscuous mode and adds the packet counter function to the call back
   Serial.print("Initializing Network Settings on Channel ");Serial.println(ap_channel);
   wifi_set_opmode(STATION_MODE);                                // Promiscuous works only with station mode
-  wifi_set_channel(ap_channel);
-  wifi_promiscuous_enable(disable);
+  wifi_set_channel(ap_channel);                                 // Set which channel we are listening to
+  wifi_promiscuous_enable(0);                                   // make sure promiscuous mode is disabled so we can add our call back function
   wifi_set_promiscuous_rx_cb((wifi_promiscuous_cb_t)counter);   // Set up promiscuous callback. Typecasted to match expected pointer type
-  wifi_promiscuous_enable(enable);
+  wifi_promiscuous_enable(1);                                   // enable promisuous mode with our new call back function
   Serial.println("Network Settings Configured");
   
-  // Shift Register and Port Configuration
-  Serial.println("Initializing Display");
+  // GPIO Port Configuration
+  Serial.println("Initializing Pins");
   pinMode(LATCH, OUTPUT);
   pinMode(CLOCK, OUTPUT);
   pinMode(DATA, OUTPUT);
-  digitalWrite(LATCH, LOW);
-  shiftOut(DATA, CLOCK, MSBFIRST, 0);
-  digitalWrite(LATCH, HIGH);
   pinMode(CLEAR, OUTPUT);
   pinMode(OUTPUTENABLE, OUTPUT);
-  digitalWrite(CLEAR, HIGH);
-  digitalWrite(CLEAR, LOW);
-  digitalWrite(CLEAR, HIGH);
-  pinMode(SWITCH, INPUT);
-  attachInterrupt(digitalPinToInterrupt(SWITCH), button_ISR, CHANGE);
+  pinMode(SWITCH, INPUT);               // Not used in this firmware, but feel free to add your own button functionality
   
-  Serial.println("Starting Packet Counting");
+  // Set initial pin conditions
+  digitalWrite(CLEAR, HIGH);                      // Active Low
+  analogWrite(OUTPUTENABLE, led_brightness);      // Set LED Brightness
+  
+  Serial.println("Finished Setup, Starting loop");
 }
 
 void loop() {
-  // Every 100ms calculate the change in packets (Packets/Second) and display on the 8 LEDs
-  static byte oldvalue = 0;
-  static int s_counter = 0;
-  curTime = millis();
-  if(curTime - prevTime >= 100)
+  static unsigned long prevTime = 0;      // timer variable to use to see if enough time has passed since last display update
+                                          // "static" means the compiler won't re-initialize the variable every loop
+  static byte previous_value = 0;         // value used to make sure we only update the display as needed
+
+  ESP.wdtFeed();  // Feed watchdog timer just in case, since we are doing nothing
+  
+  if(millis() - prevTime >= refresh_rate) // check if it is time to update the display
   {
-    s_counter++;
-    prevTime = curTime;
-    derrivative = pkts-oldpkts;
-    derrivative = derrivative * 10;
-    oldpkts = pkts;
-    //Serial.print(derrivative);
-    filter_current_output  = filter_alpha*derrivative + (1-filter_alpha)*filter_previous_output;
-    filter_previous_output = filter_current_output;
-    //Serial.print(",");Serial.println(filter_current_output);
-    derrivative = filter_current_output;
+    prevTime = millis();                  // update timer variable for next display update
+
+    double packets_per_second = (pkts*(1000/refresh_rate)); // calculate how many packets per second have occured since last display
+                                                         // 1000 is used to convert milliseconds to seconds
     
-    if(derrivative < max_derrivative * 0.125)
-    {
-      value = 1; //  |-------
-      analogWrite(OUTPUTENABLE, 1020);
-    }
-    else if (derrivative < max_derrivative * 0.25)
-    {
-      value = 3; //  ||------
-      analogWrite(OUTPUTENABLE, 1010);
-    }
-    else if (derrivative < max_derrivative * 0.375)
-    {
-      value = 7; //  |||-----
-      analogWrite(OUTPUTENABLE, 1000);
-    }
-    else if (derrivative < max_derrivative * 0.5)
-    {
-      value = 15; // ||||----
-      analogWrite(OUTPUTENABLE, 950);
-    }
-    else if (derrivative < max_derrivative * 0.625)
-    {
-      value = 31; // |||||---
-      analogWrite(OUTPUTENABLE, 900);
-    }
-    else if (derrivative < max_derrivative * 0.75)
-    {
-      value = 63; // ||||||--
-      analogWrite(OUTPUTENABLE, 500);
-    }
-    else if (derrivative < max_derrivative * 0.875)
-    {
-      value = 127; // |||||||-
-      analogWrite(OUTPUTENABLE, 300);
-    }
-    else if (derrivative >= max_derrivative * 0.875)
-    {
-      value = 255; // ||||||||
-      analogWrite(OUTPUTENABLE, 0);
-    }
-    if(oldvalue!=value){
+    pkts = 0;                             // reset packets counter variable for next calculation
+    
+    byte led_value = pow(2,ceil((packets_per_second/max_rate)*8.0)) - 1;
+    
+    if(previous_value!=led_value){
       // Display Value
       digitalWrite(LATCH, LOW);
-      shiftOut(DATA, CLOCK, MSBFIRST, value);
-      delay(1);
+      shiftOut(DATA, CLOCK, MSBFIRST, led_value);
       digitalWrite(LATCH, HIGH);
-    }
-    oldvalue = value;
-    
-    // Reset auto ranging every hour
-    if(s_counter>36000){
-      max_derrivative = 0;
-      s_counter = 0;
+      previous_value=led_value;
     }
     
-    if(derrivative>max_derrivative){
-      max_derrivative = derrivative;
-      //Serial.print("new max derrivative:");Serial.println(max_derrivative);
-    }
+    // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
+    // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
   }
-  if(!digitalRead(SWITCH)){
-    if(button_long_started == false){
-      button_long_started = true;
-      button_long_timer = millis();
-    }
-    if(millis()-button_long_timer>1500){
-      button_long_timer = 0;
-      button_long_started = false;
-      change_channel();
-    }
-  }
-  else{
-    button_long_started = false;
-  }
-  
-}
-
-void button_ISR()
-{
-  //Serial.println("Entered Button ISR");
-  if(!digitalRead(SWITCH)){
-    buttonPrevTime = millis();
-  }
-  else{
-    unsigned long time_difference = millis() - buttonPrevTime;
-    if(time_difference > 100){
-      button_short = true;
-    }
-  }
-}
-
-void change_channel(){
-  Serial.println("Changing Channel");
-  bool done_flag = false;
-  int current_channel = 1;
-  digitalWrite(LATCH, LOW);
-  shiftOut(DATA, CLOCK, MSBFIRST, current_channel);
-  digitalWrite(LATCH, HIGH);
-  while(!done_flag){
-    ESP.wdtFeed();
-    curTime = millis();
-    if(curTime - prevTime >= 500){
-      prevTime = curTime;
-      //toggle LEDs
-      digitalWrite(OUTPUTENABLE, !digitalRead(OUTPUTENABLE));
-    }
-    if(button_short){
-      current_channel++;
-      if(current_channel>14){
-        current_channel=1;    // Wrap around back to channel 1 
-      }
-      button_short = false;
-      digitalWrite(LATCH, LOW);
-      shiftOut(DATA, CLOCK, MSBFIRST, current_channel);
-      digitalWrite(LATCH, HIGH);
-    }
-    if(!digitalRead(SWITCH)){
-      if(button_long_started == false){
-        button_long_started = true;
-        button_long_timer = millis();
-      }
-      if(millis()-button_long_timer>1500){
-        button_long_timer = 0;
-        button_long_started = false;
-        done_flag=true;
-        EEPROM.write(CHANNEL_ADDR, current_channel);
-        EEPROM.commit();    //Store data to EEPROM
-      }
-    }
-    else{
-      button_long_started = false;
-     }
-  }
-  ESP.reset();
 }
