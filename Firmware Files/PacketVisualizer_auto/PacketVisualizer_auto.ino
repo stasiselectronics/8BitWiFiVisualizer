@@ -111,18 +111,21 @@ void loop() {
       filtered_rate = packets_per_second;                   // Ignore filter if change is positive
     }
     else{
-      filtered_rate = filter_alpha*packets_per_second + (1-filter_alpha)*filtered_rate;   // apply low pass filter to packets per second
+      filtered_rate -= filtered_rate*((double)refresh_rate/1000)*2;   // fall back the displayed value in a half second
+      if(filtered_rate<0){
+        filtered_rate=0;
+      }
     }
     
     
     pkts = 0;                             // reset packets counter variable for next calculation
 
     if(packets_per_second>max_rate){
-      max_rate = filtered_rate;      // auto adjust max rate
+      max_rate = filtered_rate;           // auto adjust max rate
     }
     
     byte led_value = pow(2,ceil((filtered_rate/max_rate)*8.0)) - 1;
-    Serial.println(ceil((filtered_rate/max_rate)*8.0));
+    //Serial.println(ceil((filtered_rate/max_rate)*8.0));
 
     max_rate-= 1;                       // have max rate fall back over time
     
@@ -137,7 +140,7 @@ void loop() {
     
     // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
     // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
-    // Serial.print(packets_per_second);Serial.print(",");Serial.print(filtered_rate);Serial.print(",");Serial.println(max_rate);
+     Serial.print(packets_per_second);Serial.print(",");Serial.print(filtered_rate);Serial.print(",");Serial.println(max_rate);
   }
 }
 
