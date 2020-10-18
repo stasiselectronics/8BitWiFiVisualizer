@@ -18,7 +18,7 @@
 // Max Rate: This is the maximum rate of packets per seconds that will be displayed, and will then be divided by 8 to determine
 //           This firmware will automatically adjust this value as it runs
 
-  double max_rate = 1000; // packets per second // This will be changed automatically as the device runs
+  double max_rate = 0; // packets per second // This will be changed automatically as the device runs
 
 // Refresh Rate: This is how often the display is updated, and is used in calculating the packets per second.
 
@@ -96,7 +96,7 @@ void loop() {
                                           // "static" means the compiler won't re-initialize the variable every loop
   static byte previous_value = 0;         // value used to make sure we only update the display as needed
 
-  ESP.wdtFeed();  // Feed watchdog timer just in case, since we are doing nothing
+  ESP.wdtFeed();  // Feed watchdog timer just in case, since we are doing nothing most of the time
   
   if(millis() - prevTime >= refresh_rate) // check if it is time to update the display
   {
@@ -106,8 +106,14 @@ void loop() {
                                                          // 1000 is used to convert milliseconds to seconds
     
     pkts = 0;                             // reset packets counter variable for next calculation
+
+    if(packets_per_second>max_rate){
+      max_rate = packets_per_second;      // auto adjust max rate
+    }
     
     byte led_value = pow(2,ceil((packets_per_second/max_rate)*8.0)) - 1;
+
+    max_rate-= 1;                       // have max rate fall back over time
     
     if(previous_value!=led_value){
       // Display Value
@@ -116,11 +122,11 @@ void loop() {
       digitalWrite(LATCH, HIGH);
       previous_value=led_value;
       analogWrite(OUTPUTENABLE, led_brightness[led_value-1]);      // Set LED Brightness
-      Serial.println(led_brightness[led_value-1]);
     }
     
     // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
-    Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
+    // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
+    Serial.print(packets_per_second);Serial.print(",");Serial.println(max_rate);
   }
 }
 
