@@ -18,7 +18,7 @@
 // Max Rate: This is the maximum rate of packets per seconds that will be displayed, and will then be divided by 8 to determine
 //           This firmware will automatically adjust this value as it runs
 
-  double max_rate = 0; // packets per second // This will be changed automatically as the device runs
+  double max_rate = 100; // packets per second // This will be changed automatically as the device runs
 
 // Refresh Rate: This is how often the display is updated, and is used in calculating the packets per second.
 
@@ -58,21 +58,8 @@ void setup() {
   Serial.begin(115200);                // begin Serial port and set the baud rate to 115200, feel free to change this if you want
   Serial.print("\n\n\n");              // helps to clear the application dialogue and the ESP8266's boot dialogue
   Serial.println("Auto Selecting Channel");
-  ap_channel = get_channel();
-  if(ap_channel<1||ap_channel>11){
-    ap_channel=1;
-    Serial.println("AP Channel out of bounds, set ap_channel to something between 1 and 14");
-  }
   
-  // Networking Setup, sets ESP8266 into Promiscuous mode and adds the packet counter function to the call back
-  Serial.print("Initializing Network Settings on Channel ");Serial.println(ap_channel);
-  wifi_set_opmode(STATION_MODE);                                // Promiscuous works only with station mode
-  wifi_set_channel(ap_channel);                                 // Set which channel we are listening to
-  wifi_promiscuous_enable(0);                                   // make sure promiscuous mode is disabled so we can add our call back function
-  wifi_set_promiscuous_rx_cb((wifi_promiscuous_cb_t)counter);   // Set up promiscuous callback. Typecasted to match expected pointer type
-  wifi_promiscuous_enable(1);                                   // enable promisuous mode with our new call back function
-  Serial.println("Network Settings Configured");
-  
+    
   // GPIO Port Configuration
   Serial.println("Initializing Pins");
   pinMode(LATCH, OUTPUT);
@@ -84,7 +71,38 @@ void setup() {
   
   // Set initial pin conditions
   digitalWrite(CLEAR, HIGH);                      // Active Low
-  digitalWrite(OUTPUTENABLE, LOW);                // Active Low
+  analogWrite(OUTPUTENABLE, 1010);                // Active Low
+
+  digitalWrite(LATCH, LOW);
+  shiftOut(DATA, CLOCK, MSBFIRST, 255);
+  digitalWrite(LATCH, HIGH);
+
+  // Auto Select Channel
+  ap_channel = get_channel();
+  if(ap_channel<1||ap_channel>11){
+    ap_channel=1;
+    Serial.println("AP Channel out of bounds, set ap_channel to something between 1 and 14");
+  }
+
+  // Display which channel was selected
+  digitalWrite(LATCH, LOW);
+  shiftOut(DATA, CLOCK, MSBFIRST, ap_channel);
+  digitalWrite(LATCH, HIGH);
+  for(int i = 0; i < 4; i ++){
+    digitalWrite(OUTPUTENABLE, HIGH);
+    delay(300);
+    analogWrite(OUTPUTENABLE, 500);
+    delay(300);
+  }
+  
+  // Networking Setup, sets ESP8266 into Promiscuous mode and adds the packet counter function to the call back
+  Serial.print("Initializing Network Settings on Channel ");Serial.println(ap_channel);
+  wifi_set_opmode(STATION_MODE);                                // Promiscuous works only with station mode
+  wifi_set_channel(ap_channel);                                 // Set which channel we are listening to
+  wifi_promiscuous_enable(0);                                   // make sure promiscuous mode is disabled so we can add our call back function
+  wifi_set_promiscuous_rx_cb((wifi_promiscuous_cb_t)counter);   // Set up promiscuous callback. Typecasted to match expected pointer type
+  wifi_promiscuous_enable(1);                                   // enable promisuous mode with our new call back function
+  Serial.println("Network Settings Configured");
   
   Serial.println("Finished Setup, Starting loop");
 }
