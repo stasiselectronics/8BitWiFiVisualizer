@@ -31,6 +31,9 @@
 
   int led_brightness[8] = {1020, 1010, 1000, 950, 900, 500, 300, 0};
 
+// Low Pass Filter: This software filter helps to smooth out the packets per second data to make a more pleasant
+//                  light display. 
+
 // Header files to include
 #include <ESP8266WiFi.h>
 #include <EEPROM.h>
@@ -114,5 +117,34 @@ void loop() {
     
     // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
     // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
+  }
+}
+
+int get_channel(){
+  // function looks at all available networks and returns the channel that has the strongest network present
+  int wifi_networks_n = 0;    // Number of wifi networks present, and used to reference details of the networks
+  int max_rssi = -1000;       // RSSIs are negative, so initialize to something below any actual network strength
+  int strongest_network = 0;  // Number in list of wifi networks, used to print for reference
+
+  WiFi.mode(WIFI_STA);        // Make sure ESP8266 is in station mode
+  WiFi.disconnect();          // Make sure we're not connected to any network
+  wifi_networks_n = WiFi.scanNetworks();  // Get number of available networks, used to access array of wifi networks
+
+  if(wifi_networks_n == 0){
+    Serial.println("No Networks Found, that's not right, who doesn't have a WiFi network around?");
+    return 0;
+  }
+  else{
+    for (int i = 0; i < wifi_networks_n; ++i) {
+      // look through wifi networks and find strongest network strength and save corresponding network channel
+      if(WiFi.RSSI(i)>max_rssi){
+        strongest_network = i;
+        max_rssi=WiFi.RSSI(i);
+      }
+    }
+    Serial.print("Found strongest network ");Serial.print(WiFi.SSID(strongest_network));
+    Serial.print(" with RSSI of "); Serial.print(WiFi.RSSI(strongest_network));
+    Serial.print(" on channel ");Serial.println(WiFi.channel(strongest_network));
+    return(WiFi.channel(strongest_network));
   }
 }
