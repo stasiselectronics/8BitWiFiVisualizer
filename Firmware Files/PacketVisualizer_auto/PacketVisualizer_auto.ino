@@ -5,32 +5,35 @@
 
 // Use this firmware if you want more advanced features such as:
 //  - Auto scan available networks to select channel with strongest network
+//  - Auto range the packets per second to automatically configure the max rate
 //  - Change LED brightness to match packet rate intensity
 //  - Low Pass Filter for smoother LED changes
 //  - Change AP Channel with user button
 
 // AP Channel: This is the network channel that the visualizer listens to, it only looks at one channel at a time.
-//             Most people choose their own network's channel, but feel free to play around with which channel you're listening to.
-//             There are 14 total channels, with most regions using channels 1 through 13.
+//             This firmware will automatically look for the channel with the strongest wifi network
 
-  int ap_channel = 1; // Feel free to change!
+  int ap_channel = 1; // This will be changed automatically on setup
   
 // Max Rate: This is the maximum rate of packets per seconds that will be displayed, and will then be divided by 8 to determine
-//           how many LEDs to show based on the current reading. Downloading at 50 megabits per second is about 1000 packets per second.
+//           This firmware will automatically adjust this value as it runs
 
-  double max_rate = 1000; // packets per second // Feel free to change! 
+  double max_rate = 0; // packets per second // This will be changed automatically as the device runs
 
 // Refresh Rate: This is how often the display is updated, and is used in calculating the packets per second.
 
   int refresh_rate = 100; // ms // Feel free to change!
 
 // LED Brightness: You can use the PWM functionality on the Output Enable pin to set a brightness for the LEDs.
-//                 Use a value between 0 and 1023, where 1023 is "off", and 950 is "dim"
+//                 Use a value between 0 and 1023, where 1023 is "off", and 950 is "dim" and 0 is fully "on"
+//                 This firmware allows you to specify a brightness for every displayed value, growing in brightness as
+//                 packet rate intensifies. Array begins with value 1, and goes to value 8
 
-  int led_brightness = 950;
+  int led_brightness[8] = {1020, 1010, 1000, 950, 900, 500, 300, 0};
 
 // Header files to include
 #include <ESP8266WiFi.h>
+#include <EEPROM.h>
 
 // GPIO Pin Definitions
 // Changing these will affect the board's functionality, do so at your own risk!
