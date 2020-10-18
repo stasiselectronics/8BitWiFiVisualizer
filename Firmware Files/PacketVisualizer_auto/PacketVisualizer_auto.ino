@@ -7,7 +7,7 @@
 //  - Auto scan available networks to select channel with strongest network
 //  - Auto range the packets per second to automatically configure the max rate
 //  - Change LED brightness to match packet rate intensity
-//  - Low Pass Filter for smoother LED changes
+//  - Filter for smoother LED changes
 //  - Change AP Channel with user button
 
 // AP Channel: This is the network channel that the visualizer listens to, it only looks at one channel at a time.
@@ -31,9 +31,6 @@
 
   int led_brightness[8] = {1020, 1010, 1000, 950, 900, 500, 300, 0};
 
-// Low Pass Filter: This software filter helps to smooth out the packets per second data to make a more pleasant
-//                  light display. 
-  double filter_alpha = 0.125;  // low pass filter coeficient, feel free to change
 
 // Header files to include
 #include <ESP8266WiFi.h>
@@ -62,7 +59,7 @@ void setup() {
   Serial.print("\n\n\n");              // helps to clear the application dialogue and the ESP8266's boot dialogue
   Serial.println("Auto Selecting Channel");
   ap_channel = get_channel();
-  if(ap_channel<1||ap_channel>14){
+  if(ap_channel<1||ap_channel>11){
     ap_channel=1;
     Serial.println("AP Channel out of bounds, set ap_channel to something between 1 and 14");
   }
@@ -83,7 +80,7 @@ void setup() {
   pinMode(DATA, OUTPUT);
   pinMode(CLEAR, OUTPUT);
   pinMode(OUTPUTENABLE, OUTPUT);
-  pinMode(SWITCH, INPUT);               // Not used in this firmware, but feel free to add your own button functionality
+  pinMode(SWITCH, INPUT);               
   
   // Set initial pin conditions
   digitalWrite(CLEAR, HIGH);                      // Active Low
@@ -93,10 +90,13 @@ void setup() {
 }
 
 void loop() {
-  static unsigned long prevTime = 0;      // timer variable to use to see if enough time has passed since last display update
-                                          // "static" means the compiler won't re-initialize the variable every loop
-  static byte previous_value = 0;         // value used to make sure we only update the display as needed
-  static double filtered_rate = 0;        // variable to hold a filtered version of the packets per second
+  static unsigned long prevTime = 0;       // timer variable to use to see if enough time has passed since last display update
+                                           // "static" means the compiler won't re-initialize the variable every loop
+  static byte previous_value = 0;          // value used to make sure we only update the display as needed
+  static double filtered_rate = 0;         // variable to hold a filtered version of the packets per second
+  static unsigned int button_timer = 0;    // variable to keep track of how long the button has been presed
+  static unsigned int debounce_timer = 0;  // variable to keep track of any debouncing when pressing the button
+  static bool change_channel_flag = false; // Flag to ignore button press if we just changed the channel
 
   ESP.wdtFeed();  // Feed watchdog timer just in case, since we are doing nothing most of the time
   
@@ -123,6 +123,9 @@ void loop() {
     if(packets_per_second>max_rate){
       max_rate = filtered_rate;           // auto adjust max rate
     }
+    else if(max_rate < 100){
+      max_rate = 100;                     // set minimum max rate
+    }
     
     byte led_value = pow(2,ceil((filtered_rate/max_rate)*8.0)) - 1;
     //Serial.println(ceil((filtered_rate/max_rate)*8.0));
@@ -142,6 +145,37 @@ void loop() {
     // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
      Serial.print(packets_per_second);Serial.print(",");Serial.print(filtered_rate);Serial.print(",");Serial.println(max_rate);
   }
+
+  // check button state and perform debouncing
+  if(!digitalRead(SWITCH)){
+    if(button_timer==0 && !change_channel_flag){
+      button_timer = millis();              // button is first pressed, start a timer to see how long it has been pressed
+    }
+    else{
+      if(button_timer !=0 && millis() - button_timer>2000){     // long press has occured, allow to change channel
+        button_timer = 0;
+        debounce_timer = 0;
+        change_channel();
+        change_channel_flag = true;
+      }
+    }
+  }
+  else{// button is not pressed, so lets check if it has been recently pressed to apply debounce
+    change_channel_flag = false;
+    if(button_timer > 0 && debounce_timer == 0){
+      debounce_timer = millis();            // button was just released, start a timer to check if it is just debouncing
+    }
+    else if(button_timer > 0 && debounce_timer > 20){
+      debounce_timer = 0;
+      button_timer = 0;
+    }
+    if(button_timer > 0 && millis() - button_timer > 100){
+      // this would be a short press
+      max_rate = 100; // reset max range
+      button_timer = 0;
+      debounce_timer = 0;
+    }
+  }
 }
 
 int get_channel(){
@@ -149,7 +183,7 @@ int get_channel(){
   int wifi_networks_n = 0;    // Number of wifi networks present, and used to reference details of the networks
   int max_rssi = -1000;       // RSSIs are negative, so initialize to something below any actual network strength
   int strongest_network = 0;  // Number in list of wifi networks, used to print for reference
-
+  
   WiFi.mode(WIFI_STA);        // Make sure ESP8266 is in station mode
   WiFi.disconnect();          // Make sure we're not connected to any network
   wifi_networks_n = WiFi.scanNetworks();  // Get number of available networks, used to access array of wifi networks
@@ -171,4 +205,69 @@ int get_channel(){
     Serial.print(" on channel ");Serial.println(WiFi.channel(strongest_network));
     return(WiFi.channel(strongest_network));
   }
+}
+
+void change_channel(){
+  bool done_flag = false;
+  unsigned long timer1 = millis();
+  unsigned long button_timer = 0;
+  unsigned long debounce_timer = 0;
+  Serial.println("Changing Channel");
+  digitalWrite(OUTPUTENABLE, LOW);
+  digitalWrite(LATCH, LOW);
+  shiftOut(DATA, CLOCK, MSBFIRST, ap_channel);
+  digitalWrite(LATCH, HIGH);
+  while(!digitalRead(SWITCH)){
+    // button is still being depresed, wait until released
+    ESP.wdtFeed();
+    if(millis()-timer1 >= 500){
+      timer1 = millis();
+      //toggle LEDs
+      digitalWrite(OUTPUTENABLE, !digitalRead(OUTPUTENABLE));
+    }
+  }
+  while(!done_flag){
+    ESP.wdtFeed();
+    if(millis()-timer1 >= 500){
+      timer1 = millis();
+      //toggle LEDs
+      digitalWrite(OUTPUTENABLE, !digitalRead(OUTPUTENABLE));
+    }
+    if(!digitalRead(SWITCH)){
+    if(button_timer==0){
+      button_timer = millis();
+    }
+    else{
+      if(millis() - button_timer>2000){
+        // long press condition
+        button_timer = 0;
+        done_flag = true;
+        }
+      }
+    }
+    else{
+      if(button_timer > 0 && debounce_timer == 0){
+        debounce_timer = millis();
+      }
+      else if(button_timer > 0 && millis() - debounce_timer > 20){
+        debounce_timer = 0;
+        button_timer = 0;
+      }
+      if(button_timer > 0 && millis() - button_timer > 100){
+        // this would be a short press
+        ap_channel++;
+        if(ap_channel>11){
+          ap_channel = 1;           // wrap around back to channel 1
+        }
+        digitalWrite(LATCH, LOW);
+        shiftOut(DATA, CLOCK, MSBFIRST, ap_channel);
+        digitalWrite(LATCH, HIGH);
+        button_timer = 0;
+        debounce_timer = 0;
+      }
+    }
+    
+  }
+  Serial.print("Setting Channel to ");Serial.println(ap_channel);
+  wifi_set_channel(ap_channel); 
 }
