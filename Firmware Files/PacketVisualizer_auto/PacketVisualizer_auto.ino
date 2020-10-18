@@ -33,6 +33,7 @@
 
 // Low Pass Filter: This software filter helps to smooth out the packets per second data to make a more pleasant
 //                  light display. 
+  double filter_alpha = 0.125;  // low pass filter coeficient, feel free to change
 
 // Header files to include
 #include <ESP8266WiFi.h>
@@ -95,6 +96,7 @@ void loop() {
   static unsigned long prevTime = 0;      // timer variable to use to see if enough time has passed since last display update
                                           // "static" means the compiler won't re-initialize the variable every loop
   static byte previous_value = 0;         // value used to make sure we only update the display as needed
+  static double filtered_rate = 0;        // variable to hold a filtered version of the packets per second
 
   ESP.wdtFeed();  // Feed watchdog timer just in case, since we are doing nothing most of the time
   
@@ -103,15 +105,24 @@ void loop() {
     prevTime = millis();                  // update timer variable for next display update
 
     double packets_per_second = (pkts*(1000/refresh_rate)); // calculate how many packets per second have occured since last display
-                                                         // 1000 is used to convert milliseconds to seconds
+                                                            // 1000 is used to convert milliseconds to seconds
+
+    if(packets_per_second>filtered_rate){
+      filtered_rate = packets_per_second;                   // Ignore filter if change is positive
+    }
+    else{
+      filtered_rate = filter_alpha*packets_per_second + (1-filter_alpha)*filtered_rate;   // apply low pass filter to packets per second
+    }
+    
     
     pkts = 0;                             // reset packets counter variable for next calculation
 
     if(packets_per_second>max_rate){
-      max_rate = packets_per_second;      // auto adjust max rate
+      max_rate = filtered_rate;      // auto adjust max rate
     }
     
-    byte led_value = pow(2,ceil((packets_per_second/max_rate)*8.0)) - 1;
+    byte led_value = pow(2,ceil((filtered_rate/max_rate)*8.0)) - 1;
+    Serial.println(ceil((filtered_rate/max_rate)*8.0));
 
     max_rate-= 1;                       // have max rate fall back over time
     
@@ -121,12 +132,12 @@ void loop() {
       shiftOut(DATA, CLOCK, MSBFIRST, led_value);
       digitalWrite(LATCH, HIGH);
       previous_value=led_value;
-      analogWrite(OUTPUTENABLE, led_brightness[led_value-1]);      // Set LED Brightness
+      analogWrite(OUTPUTENABLE, led_brightness[(byte)ceil((filtered_rate/max_rate)*8.0)-1]);      // Set LED Brightness
     }
     
     // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
     // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
-    Serial.print(packets_per_second);Serial.print(",");Serial.println(max_rate);
+    // Serial.print(packets_per_second);Serial.print(",");Serial.print(filtered_rate);Serial.print(",");Serial.println(max_rate);
   }
 }
 
