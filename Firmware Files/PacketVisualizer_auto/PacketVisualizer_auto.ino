@@ -18,7 +18,7 @@
 // Max Rate: This is the maximum rate of packets per seconds that will be displayed, and will then be divided by 8 to determine
 //           This firmware will automatically adjust this value as it runs
 
-  double max_rate = 0; // packets per second // This will be changed automatically as the device runs
+  double max_rate = 1000; // packets per second // This will be changed automatically as the device runs
 
 // Refresh Rate: This is how often the display is updated, and is used in calculating the packets per second.
 
@@ -59,6 +59,8 @@ void counter() {
 void setup() {
   Serial.begin(115200);                // begin Serial port and set the baud rate to 115200, feel free to change this if you want
   Serial.print("\n\n\n");              // helps to clear the application dialogue and the ESP8266's boot dialogue
+  Serial.println("Auto Selecting Channel");
+  ap_channel = get_channel();
   if(ap_channel<1||ap_channel>14){
     ap_channel=1;
     Serial.println("AP Channel out of bounds, set ap_channel to something between 1 and 14");
@@ -84,7 +86,7 @@ void setup() {
   
   // Set initial pin conditions
   digitalWrite(CLEAR, HIGH);                      // Active Low
-  analogWrite(OUTPUTENABLE, led_brightness);      // Set LED Brightness
+  digitalWrite(OUTPUTENABLE, LOW);                // Active Low
   
   Serial.println("Finished Setup, Starting loop");
 }
@@ -113,10 +115,12 @@ void loop() {
       shiftOut(DATA, CLOCK, MSBFIRST, led_value);
       digitalWrite(LATCH, HIGH);
       previous_value=led_value;
+      analogWrite(OUTPUTENABLE, led_brightness[led_value-1]);      // Set LED Brightness
+      Serial.println(led_brightness[led_value-1]);
     }
     
     // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
-    // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
+    Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
   }
 }
 
