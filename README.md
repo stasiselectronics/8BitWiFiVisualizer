@@ -12,7 +12,7 @@ This repository contains all the source files needed to reproduce this project. 
 This is still a work in progress, so be sure to check back for future updates!
 
 ## Quick Links
-- [Board Schematics](https://github.com/ChandlerMcCowan/8BitWiFiVisualizer/blob/master/Hardware%20Files/PDFs/PacketVis_Schematic.pdf)
+- [Board Schematics](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Hardware%20Files/PDFs/8Bit_WiFi_Visualizer_Schematic.pdf)
 
 ## Current Status
 
