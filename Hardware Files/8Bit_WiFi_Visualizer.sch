@@ -535,12 +535,12 @@ U 1 1 5DDE6C13
 P 1475 1500
 F 0 "J1" H 1532 1967 50  0000 C CNN
 F 1 "USB_B_Micro" H 1532 1876 50  0000 C CNN
-F 2 "8Bit_WiFi_Visualizer_Footprints:USB_Micro-B_Molex-105017-0001_3D" H 1625 1450 50  0001 C CNN
+F 2 "8Bit_WiFi_Visualizer_Footprints:U-F-M5DD-Y-L" H 1625 1450 50  0001 C CNN
 F 3 "~" H 1625 1450 50  0001 C CNN
-F 4 "1050170001" H 1475 1500 50  0001 C CNN "Manufacturer PN"
+F 4 "U-F-M5DD-Y-L" H 1475 1500 50  0001 C CNN "Manufacturer PN"
 F 5 "MicroUSB Connector SMD" H 1475 1500 50  0001 C CNN "Description"
-F 6 "C136000" H 1475 1500 50  0001 C CNN "LCSC Order Number"
-F 7 "MOLEX" H 1475 1500 50  0001 C CNN "Manufacturer"
+F 6 "C91146" H 1475 1500 50  0001 C CNN "LCSC Order Number"
+F 7 "Korean Hroparts Elec" H 1475 1500 50  0001 C CNN "Manufacturer"
 	1    1475 1500
 	1    0    0    -1  
 $EndComp
