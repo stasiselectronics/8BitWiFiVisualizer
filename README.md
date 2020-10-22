@@ -11,8 +11,14 @@ This repository contains all the source files needed to reproduce this project. 
 
 This is still a work in progress, so be sure to check back for future updates!
 
+## Companion Site
+
+[Check out the companion site for more documentation!](https://stasiselectronics.github.io/8BitWiFiVisualizer/)
+
+
 ## Quick Links
 - [Board Schematics](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Hardware%20Files/PDFs/8Bit_WiFi_Visualizer_Schematic.pdf)
+
 
 ## Current Status
 
