@@ -6,11 +6,18 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-Here is where you can place the schematics of the project. They should be displayed as pdf
+[Download a PDF of the Schematics](https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/master/Hardware%20Files/PDFs/8Bit_WiFi_Visualizer_Schematic.pdf)
 
-You can include the pdfs like this
-```html
-<iframe width="100%" height="600px" src="<project name>/docs/board/assets/schematics.pdf"></iframe>
-```
-<iframe width="100%" height="600px" src="/Hardware-Pages-Template/docs/board/assets/ESP32MiniDrop_Schematics_A02.pdf"></iframe>
+The schematics are broken down into some logical parts:
+-   WiFi Module
+-   Power Supply
+-   Display
+-   User Input
 
+# WiFi Module
+
+# Power Supply
+
+# Display
+
+# User Input
