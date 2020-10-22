@@ -62,7 +62,7 @@ author:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/stasiselectronics"
     # Feel free to add more links here
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
@@ -78,10 +78,10 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/stasiselectronics"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://www.instagram.com/stasis.electronics/"
 
 defaults:
   # _posts
