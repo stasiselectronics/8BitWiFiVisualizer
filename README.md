@@ -19,11 +19,16 @@ This is still a work in progress, so be sure to check back for future updates!
 This project is nearing completion, here are some of the latest updates
 - Redesigned PCB for larger components to make hand soldering easier
 - Recovered old firmware and tested on prototype board
+- Assembled and tested latest PCB design
+- Major firmware updates
+    - Auto selecting AP channel on startup
+    - Auto ranging intensity scale with linear decay
+    - Change AP channel with user button
 
 ## Future Goals
 
 Here's what needs to get done for this project:
-- Assemble and test latest PCB design
-- Add ability in firmware to change AP channels using user button
-- Finalize design and documentation
+- Complete Documentation
+
+Most of the project is now complete, so now all that is left is to finish up the documentation
 
