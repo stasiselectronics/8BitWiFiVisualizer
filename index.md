@@ -7,7 +7,7 @@ header:
   overlay_image: /assets/images/unsplash-image-1.jpg
   actions:
     - label: "View Source on Github"
-      url: "https://github.com/ChandlerMcCowan/Hardware-Pages-Template/"
+      url: "https://github.com/stasiselectronics/8BitWiFiVisualizer"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "A minimal WiFi connected LED display to show off 8-bit data from anywhere in the world."
 
