@@ -1,8 +1,6 @@
-# Open Source Hardware Pages Template
+# 8 Bit Wifi Visualizer Companion Site Source
 
-I wanted to create a pages template for my open source hardware projects to help with documentation, sharing, and posting about it's development.
-
-This template uses the Minimal Mistakes Jekyll theme, and is intended to be used with github pages. Though, there's nothing stopping you from hosting it on your own domain.
+Hey! Thanks for checking out the source code for the companion site for the [8 Bit Wifi Visualizer](https://stasiselectronics.github.io/8BitWiFiVisualizer/). This site is based on the Jekyl theme [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) by Michael Rose.
 
 ---
 
