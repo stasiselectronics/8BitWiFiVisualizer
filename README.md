@@ -2,12 +2,11 @@
 Open Source Hardware project for a minimalist WiFi enabled 8 Bit visualizer. This design uses the popular ESP8266 wifi module to drive 8 LEDs with a shift register.
 
 ## Network Traffic Visualizer
-Want to visualize how buys your WiFi channel is? The included Arduino sketch measures how many packets are flying around on the selected channel and displays the intensity on the LEDs.
+Want to visualize how busy your WiFi channel is? The included Arduino sketch measures how many packets are flying around on the selected channel and displays the intensity on the LEDs.
 
 With the help of some automated functions, the board selects the WiFi channel with the strongest network present at startup. It then automatically adjusts the display range to keep up changing network conditions.
 
 [Learn more about how this firmware works!](https://stasiselectronics.github.io/8BitWiFiVisualizer/docs/enclosure/automatic-firmware/)
-
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ChandlerMcCowan/8BitWiFiVisualizer/master/Hardware%20Files/3D%20Model/8Bit_WiFi_Visualizer_PCBA.png" alt="Render" width="600"/>
