@@ -22,6 +22,9 @@ This repository contains all the source files needed to reproduce this project. 
 This is still a work in progress, so be sure to check back for future updates!
 
 ## Companion Site
+This is a Github pages site to host all the documentation that goes with this design. Learn more about how everything works and keep up to date with blog posts. 
+
+<h4>This is still a work in progress, more to come!</h4>
 
 [Check out the companion site for more documentation!](https://stasiselectronics.github.io/8BitWiFiVisualizer/)
 
