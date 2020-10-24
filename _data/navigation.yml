@@ -24,11 +24,9 @@ docs:
         - title: "Components"
           url: /docs/board/components/
 
-    - title: Enclosure
+    - title: Firmware
       children:
-        - title: "3D printing"
-          url: /docs/enclosure/3d-printing/
-        - title: "Drawings"
-          url: /docs/enclosure/drawings/
-        - title: "Assembly"
-          url: /docs/enclosure/assembly/
+        - title: "Basic Firmware"
+          url: /docs/enclosure/basic-firmware/
+        - title: "Automatic Firmware"
+          url: /docs/enclosure/automatic-firmware/
