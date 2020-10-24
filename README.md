@@ -13,9 +13,9 @@ With the help of some automated functions, the board selects the WiFi channel wi
 </p>
 
 <p float="center">
-  <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_left.JPG" width="300" />
-  <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_front.JPG" width="300" /> 
-  <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_right.JPG" width="300" />
+  <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_left.JPG" width="33%" />
+  <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_front.JPG" width="33%" /> 
+  <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_right.JPG" width="33%" />
 </p>
 This repository contains all the source files needed to reproduce this project. The PCB is designed with KiCAD and the firmware uses Arduino for the ESP8266.
 
