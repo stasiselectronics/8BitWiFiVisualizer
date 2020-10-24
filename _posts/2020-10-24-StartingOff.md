@@ -40,5 +40,13 @@ Much to my dismay, there were still problems. So I left it again, to sit in a pr
 
 <h3>Pushing through failure</h3>
 
+Late in the summer of this year, I decided to try again with the design. I wanted take up the challenge of getting the design working, and share it with the open source community. I also wanted to challenge myself with design for manufacturing. It is one thing to build one of something, but it is another challenge to make a larger quantity.
+
+So now, with over 100 commits to the repository, the design is on its way to a finished state ready for others to replicate or purchase the small run of assembled boards or kits. 
+
+<h3>What's next?</h3>
+
+Now that the board is in a final state, parts have been ordered and bare PCBs are on the way. I need to finish up the documentation here on this site, as well as start offering kits and assemblies for sale.
+
 
 
