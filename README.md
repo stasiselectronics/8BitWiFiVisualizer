@@ -12,7 +12,7 @@ With the help of some automated functions, the board selects the WiFi channel wi
   <img src="https://raw.githubusercontent.com/ChandlerMcCowan/8BitWiFiVisualizer/master/Hardware%20Files/3D%20Model/8Bit_WiFi_Visualizer_PCBA.png" alt="Render" width="600"/>
 </p>
 
-<p float="center">
+<p align="center">
   <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_left.JPG" width="30%" />
   <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_front.JPG" width="30%" /> 
   <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_right.JPG" width="30%" />
