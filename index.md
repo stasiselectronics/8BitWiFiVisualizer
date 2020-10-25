@@ -11,20 +11,20 @@ header:
 excerpt: "A minimal WiFi connected LED display to show off 8-bit data from anywhere in the world."
 
 feature_row:
-  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
+  - image_path: /assets/images/gallery-image-3.jpg
     title: "Project Overview"
     excerpt: "Check out how the project works and learn more about what's going on"
     url: "about"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+  - image_path: /assets/images/gallery-image-1.jpg
     alt: "Documentation"
     title: "Documentation"
     url: "docs"
     excerpt: "Learn more about how the device works, view schematics and CAD files"
     btn_label: "Read the docs"
     btn_class: "btn--primary"
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
+  - image_path: /assets/images/gallery-image-2.jpg
     alt: "Development Blog"
     title: "Development Blog"
     excerpt: "Read the latests development posts about the project."
