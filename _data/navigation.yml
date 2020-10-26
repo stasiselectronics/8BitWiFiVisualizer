@@ -26,7 +26,9 @@ docs:
 
     - title: Firmware
       children:
-        - title: "Basic Firmware"
-          url: /docs/enclosure/basic-firmware/
-        - title: "Automatic Firmware"
-          url: /docs/enclosure/automatic-firmware/
+        - title: "Setting up Arduino"
+          url: /docs/enclosure/setup/
+        - title: "Blank Sketch"
+          url: /docs/enclosure/blank/
+        - title: "Packet Visualizer"
+          url: /docs/enclosure/packet-visualizer/
