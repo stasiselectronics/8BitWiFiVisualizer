@@ -38,7 +38,7 @@ This is a custom designed Printed Circuit Board, so there are a few parts needed
 The ESP82266 WiFi module can be programmed with the Arudiuno language and IDE. This makes getting up and running a snap with plenty of existing libraries for complicated functions.
 
 <div style="font-size: 125%;" markdown = "1">
-|[Setting Up]({{site.baseurl}}/docs/firmware/setup/){: .btn .btn--info .align-center }|Learn how to set up the Arduino IDE for developing on this specific board.
+|[Setting Up]({{site.baseurl}}/docs/firmware/setup/){: .btn .btn--info .align-center }|Learn how to set up the Arduino IDE for developing on this specific board, and how to load sketches onto the board.
 |[Blank Sketch]({{site.baseurl}}/docs/firmware/setup/){: .btn .btn--info .align-center }|Want to create your own code? Here's a starting off point with the board specific settings.
 |[Packet Visualizer]({{site.baseurl}}/docs/firmware/packet-visualizer/){: .btn .btn--info .align-center}|Learn more about how the Packet Visualizer sketch works.
 
