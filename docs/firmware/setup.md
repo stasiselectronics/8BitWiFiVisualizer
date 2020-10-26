@@ -6,4 +6,4 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-Here will be an explanation of the basic version of the firmware.
+Here will be an explanation of how to setup the Arduino IDE for this specific board
