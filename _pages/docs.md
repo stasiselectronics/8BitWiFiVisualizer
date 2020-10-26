@@ -25,10 +25,10 @@ This is a custom designed Printed Circuit Board, so there are a few parts needed
 
 
 <div style="font-size: 125%;" markdown = "1">
-|[Schematics](({{site.baseurl}}/docs/board/schematics/)){: .btn .btn--info .align-center }|The circuit design starts here, take a look to see how all the parts connect together and what their values are.
-|[Layout](({{site.baseurl}}/docs/board/layout/)){: .btn .btn--info .align-center }|Here you can find the size and shape of the board, mounting hole locations, and more details about the physical properties of the PCB.
-|[Assembly](({{site.baseurl}}/docs/board/assembly/)){: .btn .btn--info .align-center}|Want to build your own? Here you can find the instructions on how to hand solder the surface mount components.
-|[Components](({{site.baseurl}}/docs/board/components/)){: .btn .btn--info .align-center }|Here you can find the Bill of Materials, and more information of the specific components that are on the board.
+|[Schematics]({{site.baseurl}}/docs/board/schematics/){: .btn .btn--info .align-center }|The circuit design starts here, take a look to see how all the parts connect together and what their values are.
+|[Layout]({{site.baseurl}}/docs/board/layout/){: .btn .btn--info .align-center }|Here you can find the size and shape of the board, mounting hole locations, and more details about the physical properties of the PCB.
+|[Assembly]({{site.baseurl}}/docs/board/assembly/){: .btn .btn--info .align-center}|Want to build your own? Here you can find the instructions on how to hand solder the surface mount components.
+|[Components]({{site.baseurl}}/docs/board/components/){: .btn .btn--info .align-center }|Here you can find the Bill of Materials, and more information of the specific components that are on the board.
 
 </div>
 
