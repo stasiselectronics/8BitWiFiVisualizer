@@ -27,8 +27,8 @@ docs:
     - title: Firmware
       children:
         - title: "Setting up Arduino"
-          url: /docs/enclosure/setup/
+          url: /docs/firmware/setup/
         - title: "Blank Sketch"
-          url: /docs/enclosure/blank/
+          url: /docs/firmware/blank/
         - title: "Packet Visualizer"
-          url: /docs/enclosure/packet-visualizer/
+          url: /docs/firmware/packet-visualizer/
