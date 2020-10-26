@@ -25,10 +25,10 @@ This is a custom designed Printed Circuit Board, so there are a few parts needed
 
 
 <div style="font-size: 125%;" markdown = "1">
-|[Schematics](#link){: .btn .btn--info .align-center }|The circuit design starts here, take a look to see how all the parts connect together and what their values are.
-|[Layout](#link){: .btn .btn--info .align-center }|Here you can find the size and shape of the board, mounting hole locations, and more details about the physical properties of the PCB.
-|[Assembly](#link){: .btn .btn--info .align-center}|Want to build your own? Here you can find the instructions on how to hand solder the surface mount components.
-|[Components](#link){: .btn .btn--info .align-center }|Here you can find the Bill of Materials, and more information of the specific components that are on the board.
+|[Schematics](({{site.baseurl}}/docs/board/schematics/)){: .btn .btn--info .align-center }|The circuit design starts here, take a look to see how all the parts connect together and what their values are.
+|[Layout](({{site.baseurl}}/docs/board/layout/)){: .btn .btn--info .align-center }|Here you can find the size and shape of the board, mounting hole locations, and more details about the physical properties of the PCB.
+|[Assembly](({{site.baseurl}}/docs/board/assembly/)){: .btn .btn--info .align-center}|Want to build your own? Here you can find the instructions on how to hand solder the surface mount components.
+|[Components](({{site.baseurl}}/docs/board/components/)){: .btn .btn--info .align-center }|Here you can find the Bill of Materials, and more information of the specific components that are on the board.
 
 </div>
 
@@ -38,9 +38,9 @@ This is a custom designed Printed Circuit Board, so there are a few parts needed
 The ESP82266 WiFi module can be programmed with the Arudiuno language and IDE. This makes getting up and running a snap with plenty of existing libraries for complicated functions.
 
 <div style="font-size: 125%;" markdown = "1">
-|[Setting Up](#link){: .btn .btn--info .align-center }|Learn how to set up the Arduino IDE for developing on this specific board.
-|[Blank Sketch](#link){: .btn .btn--info .align-center }|Want to create your own code? Here's a starting off point with the board specific settings.
-|[Packet Visualizer](#link){: .btn .btn--info .align-center}|Learn more about how the Packet Visualizer sketch works.
+|[Setting Up]({{site.baseurl}}/docs/firmware/setup/){: .btn .btn--info .align-center }|Learn how to set up the Arduino IDE for developing on this specific board.
+|[Blank Sketch]({{site.baseurl}}/docs/firmware/setup/){: .btn .btn--info .align-center }|Want to create your own code? Here's a starting off point with the board specific settings.
+|[Packet Visualizer]({{site.baseurl}}/docs/firmware/packet-visualizer/){: .btn .btn--info .align-center}|Learn more about how the Packet Visualizer sketch works.
 
 </div>
 
