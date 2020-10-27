@@ -1,10 +1,12 @@
 ---
 permalink: /docs/
-title: "Welcome to the Documentation"
+title: "Welcome to the Documentation!"
 author_profile: false
 sidebar:
   nav: "docs"
 ---
+{: .notice--warning}
+The docs are still a work in progress, so there's still a lot missing. Make sure to check back later for the finished docs!
 
 Here you can find more details about how the 8 Bit WiFi Visualizer works, how it was designed, and find instructions to assemble your own!
 
