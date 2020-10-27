@@ -6,4 +6,6 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-Maybe here you can explain the layout decisions that were made for the design. Highlight any critical features, or something that you would want to show off.
+Hey! I'm still working on this part of the documentation, sorry about that.
+
+I do hope you check back in later to find what you're looking for!
