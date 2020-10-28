@@ -1,6 +1,7 @@
 # 8 Bit WiFi Visualizer
 Open Source Hardware project for a minimalist WiFi enabled 8 Bit visualizer. This design uses the popular ESP8266 wifi module to drive 8 LEDs with a shift register.
-
+<h2><a href="https://stasiselectronics.github.io/8BitWiFiVisualizer/docs/">Check out the Docs!</a></h2>
+  
 ## Network Traffic Visualizer
 Want to visualize how busy your WiFi channel is? The included Arduino sketch measures how many packets are flying around on the selected channel and displays the intensity on the LEDs.
 
@@ -12,7 +13,7 @@ With the help of some automated functions, the board selects the WiFi channel wi
   <img src="https://raw.githubusercontent.com/ChandlerMcCowan/8BitWiFiVisualizer/master/Hardware%20Files/3D%20Model/8Bit_WiFi_Visualizer_PCBA.png" alt="Render" width="600"/>
 </p>
 
-<p float="center">
+<p align="center">
   <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_left.JPG" width="30%" />
   <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_front.JPG" width="30%" /> 
   <img src="https://github.com/stasiselectronics/8BitWiFiVisualizer/raw/gh-pages/assets/images/pcba_right.JPG" width="30%" />
@@ -22,7 +23,7 @@ This repository contains all the source files needed to reproduce this project. 
 This is still a work in progress, so be sure to check back for future updates!
 
 ## Companion Site
-This is a Github pages site to host all the documentation that goes with this design. Learn more about how everything works and keep up to date with blog posts. 
+I've put together a Github pages site to host all the documentation that goes with this design. Learn more about how everything works and keep up to date with blog posts. 
 
 <h4>This is still a work in progress, more to come!</h4>
 
