@@ -2,6 +2,7 @@
 permalink: /about/
 title: "About"
 ---
+![Blinking Lights]({{site.baseurl}}/assets/images/about_display.webp){: .align-center}
 
 Thanks for stopping by and checking out this project! Here I hope to answer some questions you might have about what's going on here.
 
