@@ -1,5 +1,5 @@
 ---
-title: "8 Bit WiFi Visualizer"
+title: "A Simple WiFi Display"
 layout: splash
 header:
   overlay_color: "#000"
@@ -8,7 +8,7 @@ header:
   actions:
     - label: "View Source on Github"
       url: "https://github.com/stasiselectronics/8BitWiFiVisualizer"
-excerpt: "A minimal WiFi connected LED display to show off 8-bit data from anywhere in the world."
+excerpt: "Designed and built for hobbyists and lovers of blinking lights"
 
 feature_row:
   - image_path: /assets/images/gallery-image-3.jpg
@@ -32,7 +32,7 @@ feature_row:
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
-
+<h1>Visualize Your Network</h1>
 This open source hardware project brings the popular ESP8266 WiFi module to a small, low cost display board for simple 8 bit display.
 
 Example Arduino firmware is a Network Traffic Visualizer that captures packets on the board's active WiFi channel and displays the "packets per second" on the 8 LEDs, much like a VU meter. 
