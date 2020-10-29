@@ -144,11 +144,14 @@ void loop() {
     else if(max_rate < 100){
       max_rate = 100;                     // set minimum max rate
     }
+    else {
+      max_rate-= 1;                       // have max rate fall back over time
+    }
     
     byte led_value = pow(2,ceil((filtered_rate/max_rate)*8.0)) - 1;
     //Serial.println(ceil((filtered_rate/max_rate)*8.0));
 
-    max_rate-= 1;                       // have max rate fall back over time
+    
     
     if(previous_value!=led_value){
       // Display Value
@@ -161,7 +164,7 @@ void loop() {
     
     // Print to terminal, if refresh rate is too fast, you might find some errors in writing out to serial
     // Serial.print("Packet Rate: "); Serial.print(packets_per_second); Serial.println(" packets per second");
-    // Serial.print(packets_per_second);Serial.print(",");Serial.print(filtered_rate);Serial.print(",");Serial.println(max_rate); // some more debug outputS
+    Serial.print(packets_per_second);Serial.print(",");Serial.print(filtered_rate);Serial.print(",");Serial.println(max_rate); // some more debug outputS
   }
 
   // check button state and perform debouncing
