@@ -1,7 +1,8 @@
 # 8 Bit WiFi Visualizer
 Open Source Hardware project for a minimalist WiFi enabled 8 Bit visualizer. This design uses the popular ESP8266 wifi module to drive 8 LEDs with a shift register.
 <h2><a href="https://stasiselectronics.github.io/8BitWiFiVisualizer/docs/">Check out the Docs!</a></h2>
-  
+<h2><a href="https://www.tindie.com/products/stasis/8-bit-wifi-visualizer/">Order on Tindie!</a></h2>
+
 ## Network Traffic Visualizer
 Want to visualize how busy your WiFi channel is? The included Arduino sketch measures how many packets are flying around on the selected channel and displays the intensity on the LEDs.
 
