@@ -32,8 +32,6 @@ feature_row:
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
-<link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/images/logo-notext.ico">
-
 
 <h1>Visualize Your Network</h1>
 This open source hardware project brings the popular ESP8266 WiFi module to a small, low cost display board for simple 8 bit display.
