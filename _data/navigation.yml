@@ -6,7 +6,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Source"
-    url: "/source/"
+    url: "https://github.com/stasiselectronics/8BitWiFiVisualizer"
 
 docs:
     - title: Getting Started
