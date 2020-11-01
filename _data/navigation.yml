@@ -5,14 +5,16 @@ main:
     url: /blog/
   - title: "About"
     url: /about/
-    
+  - title: "Source"
+    url: "/source/"
+
 docs:
     - title: Getting Started
       children:
         - title: "Quick Start Guide"
           url: /docs/quick-start/
 
-    
+
     - title: Hardware
       children:
         - title: "Schematics"
