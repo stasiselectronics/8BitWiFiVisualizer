@@ -6,7 +6,7 @@ sidebar:
   nav: "docs"
 ---
 {: .notice--warning}
-The docs are still a work in progress, so there's still a lot missing. Make sure to check back later for the finished docs!
+The docs are still a work in progress, but is actively being updated. Make sure to check back later for the finished docs!
 
 Here you can find more details about how the 8 Bit WiFi Visualizer works, how it was designed, and find instructions to assemble your own!
 
@@ -45,4 +45,3 @@ The ESP82266 WiFi module can be programmed with the Arudiuno language and IDE. T
 |[Packet Visualizer]({{site.baseurl}}/docs/firmware/packet-visualizer/){: .btn .btn--info .align-center}|Learn more about how the Packet Visualizer sketch works.
 
 </div>
-
