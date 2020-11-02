@@ -127,7 +127,6 @@ analogWrite(OUTPUTENABLE, led_brightness);
 
 ```c++
 static unsigned long prevTime = 0;
-static byte previous_value = 0;
 ESP.wdtFeed();
 if(millis() - prevTime >= refresh_rate){
   prevTime = millis();
@@ -146,16 +145,41 @@ pkts = 0;
 
 ### Converting Packets Per Second to LEDs
 
+
+
+| Binary | Decimal | LED Result
+|---|
+| `00000001` | 1| :sunny: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon:  |
+| `00000011` | 3| :sunny: :sunny: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon:  |
+| `00000111` | 7| :sunny: :sunny: :sunny: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon:  |
+| `00001111` | 15| :sunny: :sunny: :sunny: :sunny: :new_moon: :new_moon: :new_moon: :new_moon:  |
+| `00011111` | 31| :sunny: :sunny: :sunny: :sunny: :sunny: :new_moon: :new_moon: :new_moon:  |
+| `00111111` | 63| :sunny: :sunny: :sunny: :sunny: :sunny: :sunny: :new_moon: :new_moon:  |
+| `01111111` | 127| :sunny: :sunny: :sunny: :sunny: :sunny: :sunny: :sunny: :new_moon:  |
+| `11111111` | 255| :sunny: :sunny: :sunny: :sunny: :sunny: :sunny: :sunny: :sunny:  |
+
+
 ```c++
 byte led_value = pow(2,ceil((packets_per_second/max_rate)*8.0)) - 1;
 ```
 
-\\[ a^2 = b^2 + c^2 \\]
+\\[ n = 2^{\left \lfloor \frac {\Delta p}{\Delta t} \cdot  \frac{8}{k} \right \rfloor} - 1 \\]
+
+where
+
+\\[ \textit{byte to send to shift register} = n \\]
+\\[ \textit{packets per second} = \frac{\Delta p}{\Delta t} \\]
+\\[ k = \textit{maximum rate}\\]
 
 ### Driving the LEDs
 
 ```c++
-
+if(previous_value!=led_value){
+  digitalWrite(LATCH, LOW);
+  shiftOut(DATA, CLOCK, MSBFIRST, led_value);
+  digitalWrite(LATCH, HIGH);
+  previous_value=led_value;
+}
 ```
 
 ###
