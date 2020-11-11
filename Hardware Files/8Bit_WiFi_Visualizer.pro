@@ -1,6 +1,6 @@
-update=2020-10-22 21:29:12
+update=11/11/20 22:42:47
 version=1
-last_client=eeschema
+last_client=kicad
 [general]
 version=1
 RootSch=
@@ -239,7 +239,7 @@ dPairGap=0.25
 dPairViaGap=0.25
 [schematic_editor]
 version=1
-PageLayoutDescrFile=
+PageLayoutDescrFile=Page Layouts/stasis_a4.kicad_wks
 PlotDirectoryName=PDFs/
 SubpartIdSeparator=0
 SubpartFirstId=65
