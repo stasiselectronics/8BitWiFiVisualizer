@@ -24,20 +24,11 @@ You can view the source for this project [here](https://github.com/esp8266/Ardui
 
 
 
-Arduino allows you to add more sources for the board manager to look for extra boards to add. This allows you choose the ESP8266 from the `Tools->Board` list. Copy the followi
+Arduino allows you to add more sources for the board manager to look for extra boards to add. This allows you choose the ESP8266 from the `Tools->Board` list. Copy the following URL to your clipboard.
 
 <kbd id="BoardURL" style="overflow-wrap: break-word;"> https://arduino.esp8266.com/stable/package_esp8266com_index.json </kbd>
 
+### Open Preferences
+Start the Arduino IDE and select `File->Preferences`. This will open up the following window:
 
-<button onclick="boardurlcopy()" class="btn--info">Copy Board URL</button>
-
-
-<script>
-function boardurlcopy() {
-  var copyText = document.getElementById("BoardURL");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  alert("Copied Board URL");
-}
-</script>
+![Arduino Preferences]()
