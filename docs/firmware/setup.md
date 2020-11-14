@@ -101,7 +101,7 @@ Before we hit upload, we need to make sure that the WiFi module is ready to acce
 
 Hold down both the `BOOT` and the `EN` buttons, releasing `EN` first, and then `BOOT`. This will reset the board into download mode, allowing you to upload a new sketch.
 
-You can verify this is done correctly by using Arduino's Serial Monitory (`Tools -> Serial Monitory`) and setting the BAUD rate to `74880`. The board will print the following when it is ready to have a new sketch uploaded:
+You can verify this is done correctly by using Arduino's Serial Monitor (`Tools -> Serial Monitor`) and setting the BAUD rate to `74880`. The board will print the following when it is ready to have a new sketch uploaded:
 
 <pre>
 ets Jan  8 2013,rst cause:1, boot mode:(1,6)
