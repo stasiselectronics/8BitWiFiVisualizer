@@ -84,7 +84,12 @@ Now you should be ready to upload a sketch to the board.
 
 ## Hooking Up
 
-In order to get the sketch over to the board, we need to hook it up to the PC with a USB to Serial converter. These can come in different shapes and sizes, with the most popular being something like this.
+In order to get the sketch over to the board, we need to hook it up to the PC with a USB to Serial converter. These can come in different shapes and sizes, with the most popular being something like the FT232RL boards that are common on Ebay and other sites where inexpensive boards from china are sold.
+
+<figure style="max-width: 400px;" class="align-center">
+	<a href="{{site.baseurl}}/docs/firmware/assets/FT232RL.jpg"><img src="{{site.baseurl}}/docs/firmware/assets/FT232RL.jpg"></a>
+</figure>
+
 
 Using the header pins on the board, hook up the UART signals `5V, RX, TX, GND`, making sure to cross the communication signals such that the `TX` from the computer is going to the `RX` of the ESP8266.
 
@@ -95,6 +100,12 @@ Using the header pins on the board, hook up the UART signals `5V, RX, TX, GND`, 
 Before we hit upload, we need to make sure that the WiFi module is ready to accept new code. This is done by holding down the `BOOT` button while cycling the power.
 
 Hold down both the `BOOT` and the `EN` buttons, releasing `EN` first, and then `BOOT`. This will reset the board into download mode, allowing you to upload a new sketch.
+
+You can verify this is done correctly by using Arduino's Serial Monitory (`Tools -> Serial Monitory`) and setting the BAUD rate to `74880`. The board will print the following when it is ready to have a new sketch uploaded:
+
+<pre>
+ets Jan  8 2013,rst cause:1, boot mode:(1,6)
+</pre>
 
 ## Upload
 
