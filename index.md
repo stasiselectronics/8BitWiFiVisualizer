@@ -25,10 +25,10 @@ feature_row:
     btn_label: "Read the docs"
     btn_class: "btn--primary"
   - image_path: /assets/images/gallery-image-2.jpg
-    alt: "Development Blog"
-    title: "Development Blog"
-    excerpt: "Read the latests development posts about the project."
-    url: "blog"
+    alt: "Quick Start"
+    title: "Quick Start"
+    excerpt: "Get up and running right out of the box."
+    url: "/docs/quick-start/"
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
@@ -36,8 +36,6 @@ feature_row:
 <h1>Visualize Your Network</h1>
 This open source hardware project brings the popular ESP8266 WiFi module to a small, low cost display board for simple 8 bit display.
 
-Example Arduino firmware is a Network Traffic Visualizer that captures packets on the board's active WiFi channel and displays the "packets per second" on the 8 LEDs, much like a VU meter. 
+Example Arduino firmware is a Network Traffic Visualizer that captures packets on the board's active WiFi channel and displays the "packets per second" on the 8 LEDs, much like a VU meter.
 
 {% include feature_row %}
-
-
