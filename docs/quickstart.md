@@ -16,9 +16,10 @@ The board accepts micro USB cables and will immediately turn on and begin it's s
 
 It will first scan all the networks that it can see and choose the WiFi channel with the strongest network present. It will then display which network it chose, flashing the leds with the channel number in binary.
 
-# Letting It Run
 
-As the board runs, it will automatically adjust the display scale. If you would like to reset the scale, press the user button once.
+<div class="notice--success"><p style="font-size: medium;">
+  As the board runs, it will automatically adjust the display scale. If you would like to reset the scale, press the user button once.</p>
+</div>
 
 # Changing The Channel
 
@@ -32,6 +33,7 @@ Press and hold the button when you have your desired channel number selected to 
 
 
 Want to learn more about how this firmware works?
+
 [Check out the source](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Firmware%20Files/PacketVisualizer_auto/PacketVisualizer_auto.ino)
 
 
@@ -40,16 +42,13 @@ Want to learn more about how this firmware works?
 If you know what AP channel you want to look at and what your maximum rate should be, you can use the basic firmware version and flash the board with an external USB to UART board or cable.
 
 Want to see what a very basic version of the Packet Visualizer looks like?
-[Check out the source](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Firmware%20Files/PacketVisualizer_auto/PacketVisualizer_auto.ino)
+
+[Check out the source](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Firmware%20Files/PacketVisualizer_basic/PacketVisualizer_basic.ino)
 
 # Reprogramming
 
-Want to reprogram the board with some custom firmware? Here's how.
+The firmware for the board uses the Arduino IDE and ESP8266 Arduino Core libraries. This means it's easy to write your own code to make the board do something completley different!
 
-## Adding ESP8266 to the Arduino IDE
+All you need is a USB to UART cable, module, or dongle. There are many inexpensive options out there, and you can even use a regular Arduino UNO!
 
-If you want to use the Arduino IDE to write and upload new firmware to the ESP8266 module, you'll need to do some setup before Arduino can compile and flash your sketch.
-
-The ESP8266 Arduino Core is an open source project
-
-Add this to the Arduino IDE under the Additional Board Manager URLs
+Want to reprogram the board with some custom firmware? [Here's how]({{site.baseurl}}/docs/firmware/setup/).

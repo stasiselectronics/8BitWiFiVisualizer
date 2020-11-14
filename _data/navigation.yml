@@ -1,12 +1,14 @@
 main:
   - title: "Docs"
     url: /docs/
-  - title: "Blog"
-    url: /blog/
+  - title: "Quick Start"
+    url: /docs/quick-start/
   - title: "About"
     url: /about/
   - title: "Source"
     url: "https://github.com/stasiselectronics/8BitWiFiVisualizer"
+  - title: "Buy"
+    url: "https://www.tindie.com/products/stasis/8-bit-wifi-visualizer/"
 
 docs:
     - title: Getting Started
