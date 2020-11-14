@@ -86,7 +86,7 @@ Now you should be ready to upload a sketch to the board.
 
 In order to get the sketch over to the board, we need to hook it up to the PC with a USB to Serial converter. These can come in different shapes and sizes, with the most popular being something like the FT232RL boards that are common on Ebay and other sites where inexpensive boards from china are sold.
 
-<figure style="max-width: 400px;" class="align-center">
+<figure style="max-width: 200px;" class="align-center">
 	<a href="{{site.baseurl}}/docs/firmware/assets/FT232RL.jpg"><img src="{{site.baseurl}}/docs/firmware/assets/FT232RL.jpg"></a>
 </figure>
 
