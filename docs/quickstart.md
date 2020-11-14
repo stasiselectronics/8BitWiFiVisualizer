@@ -6,27 +6,36 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-# Automatic Firmware
+If you've purchased your very own 8 Bit WiFi Visualizer, here's what happens when you power it up
 
-The firmware that ships with the board automatically sets up the network settings and display settings to visualize the network traffic.
+# Pluggin In
 
-All you need to do is plug a micro USB cable in and let the board do the rest. 
+The board accepts micro USB cables and will immediately turn on and begin it's start up functions.
 
-If you want to reset the automatic display range, simply press the button and the board will reset the number of packets per second that registers 8 LEDs on. As the board runs, it looks for any packets per second rates that is larger than its current maximum, and updates the maximum to that. This means the board should automatically adjust the display range.
+It will first scan all the networks that it can see and choose the WiFi channel with the strongest network present. It will then display which network it chose, flashing the leds with the channel number in binary.
 
-If you want, you can change the AP Channel that the ESP8266 is currently looking at. Simply hold down the user button (lower right) until the LEDs flash, showing the currently selected channel. Press the button again, to advance to the next channel. The channel number will be displayed in binary, and will cycle the channels between 1 and 11. 
+# Letting It Run
 
-When you have the channel you want, hold the button down again to confirm the selection. The board will change to that channel.
+As the board runs, it will automatically adjust the display scale. If you would like to reset the scale, press the user button once.
 
-Want to learn more about how this firmware works?  
+# Changing The Channel
+
+If you would like to change the channel that the board is visualizing, press and hold the user button until you see the channel number flashing in binary.
+
+Pressing the user button once will advance to the next channel, cycling through all 11 channels.
+
+Press and hold the button when you have your desired channel number selected to confirm your choice. The board will change channel and begin visualizing the network traffic.
+
+
+Want to learn more about how this firmware works?
 [Check out the source](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Firmware%20Files/PacketVisualizer_auto/PacketVisualizer_auto.ino)
 
 
 # Basic Firmware
 
-If you know what AP channel you want to look at and what your maximum rate should be, you can use the basic firmware version and flash the board with an external USB to UART board or cable. 
+If you know what AP channel you want to look at and what your maximum rate should be, you can use the basic firmware version and flash the board with an external USB to UART board or cable.
 
-Want to see what a very basic version of the Packet Visualizer looks like?  
+Want to see what a very basic version of the Packet Visualizer looks like?
 [Check out the source](https://github.com/stasiselectronics/8BitWiFiVisualizer/blob/master/Firmware%20Files/PacketVisualizer_auto/PacketVisualizer_auto.ino)
 
 # Reprogramming
@@ -40,5 +49,3 @@ If you want to use the Arduino IDE to write and upload new firmware to the ESP82
 The ESP8266 Arduino Core is an open source project
 
 Add this to the Arduino IDE under the Additional Board Manager URLs
-
-
