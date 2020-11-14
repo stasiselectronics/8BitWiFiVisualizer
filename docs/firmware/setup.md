@@ -31,4 +31,12 @@ Arduino allows you to add more sources for the board manager to look for extra b
 ### Open Preferences
 Start the Arduino IDE and select `File->Preferences`. This will open up the following window:
 
-![Arduino Preferences]()
+![Arduino Preferences]({{site.baseurl}}/assets/images/arduinopreferences.png){: .align-center}
+
+In the text field `Additional Board Manager URLs`, paste the URL for the ESP8266 package.
+
+![Arduino Preferences]({{site.baseurl}}/assets/images/arduinoboardurl.png){: .align-center}
+
+<div class="notice--info">
+If you have more than one URL to add, you can press the button next to the text field to open another dialog box. Here you can add each URL on a new line.
+</div>
