@@ -88,6 +88,8 @@ In order to get the sketch over to the board, we need to hook it up to the PC wi
 
 Using the header pins on the board, hook up the UART signals `5V, RX, TX, GND`, making sure to cross the communication signals such that the `TX` from the computer is going to the `RX` of the ESP8266.
 
+![Computer to ESP8266 Wiring Diagram]({{site.baseurl}}/docs/firmware/assets/wiring.png){: .align-center}
+
 ## Putting the board into boot Mode
 
 Before we hit upload, we need to make sure that the WiFi module is ready to accept new code. This is done by holding down the `BOOT` button while cycling the power.
@@ -97,3 +99,36 @@ Hold down both the `BOOT` and the `EN` buttons, releasing `EN` first, and then `
 ## Upload
 
 Go ahead and hit `Tools -> Upload` to upload the new code. The terminal at the bottom of the screen should display some information on how the upload goes.
+
+Here is an example of the terminal output for a successful upload.
+
+<pre>
+Executable segment sizes:
+IROM   : 245664          - code in flash         (default or ICACHE_FLASH_ATTR)
+IRAM   : 27932   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...)
+DATA   : 1320  )         - initialized variables (global, static) in RAM/HEAP
+RODATA : 1228  ) / 81920 - constants             (global, static) in RAM/HEAP
+BSS    : 25544 )         - zeroed variables      (global, static) in RAM/HEAP
+Sketch uses 276144 bytes (26%) of program storage space. Maximum is 1044464 bytes.
+Global variables use 28092 bytes (34%) of dynamic memory, leaving 53828 bytes for local variables. Maximum is 81920 bytes.
+esptool.py v2.8
+Serial port COM3
+Connecting....
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: d8:bf:c0:03:76:60
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 3000000
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 2MB
+Compressed 280304 bytes to 206284...
+Wrote 280304 bytes (206284 compressed) at 0x00000000 in 2.2 seconds (effective 1033.3 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Soft resetting...
+</pre>
