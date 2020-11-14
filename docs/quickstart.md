@@ -12,6 +12,8 @@ If you've purchased your very own 8 Bit WiFi Visualizer, here's what happens whe
 
 The board accepts micro USB cables and will immediately turn on and begin it's start up functions.
 
+![Power On]({{site.baseurl}}/assets/images/poweron.gif){: .align-center}
+
 It will first scan all the networks that it can see and choose the WiFi channel with the strongest network present. It will then display which network it chose, flashing the leds with the channel number in binary.
 
 # Letting It Run
@@ -19,6 +21,8 @@ It will first scan all the networks that it can see and choose the WiFi channel 
 As the board runs, it will automatically adjust the display scale. If you would like to reset the scale, press the user button once.
 
 # Changing The Channel
+
+![Changing the Channel]({{site.baseurl}}/assets/images/changechannel_small.gif){: .align-center}
 
 If you would like to change the channel that the board is visualizing, press and hold the user button until you see the channel number flashing in binary.
 
