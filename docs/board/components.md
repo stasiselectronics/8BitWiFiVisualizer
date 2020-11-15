@@ -6,9 +6,10 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-Hey! I'm still working on this part of the documentation, sorry about that.
-
-I do hope you check back in later to find what you're looking for!
+<div class="notice--warning">
+  <h4>This page is a work in progress</h4>
+  <p>I'm currently working on adding content to this page, make sure to check back later!</p>
+</div>
 
 # Bill of Materials
 

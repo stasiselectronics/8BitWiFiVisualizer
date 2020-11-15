@@ -6,11 +6,11 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-Hey! I'm still working on this part of the documentation, sorry about that.
 
-I do hope you check back in later to find what you're looking for!
+<figure style="max-width: 400px;" class="align-center">
+	<a href="{{site.baseurl}}/docs/board/assets/assembly/parts.jpg"><img src="{{site.baseurl}}/docs/board/assets/assembly/parts.jpg"></a>
+</figure>
 
-# Hand Assembly
 Once you've gotten your parts kit opened, it's time to assemble your very own 8 Bit WiFi Visualizer board!
 
 ## Tools Needed
@@ -26,7 +26,7 @@ Before you begin soldering, make sure to gather your tools. It's no fun to have 
 | Optional  |  |
 |:---:|:-|
 | **Magnification** | Ideally a stereo microscope, but a magnifying glass can be better than no magnifaction. Young eyes help too, but those can't be bought.
-| **Hot Air Station** | This makes removing parts a snap if mistakes were made. It can also be used to position themselves using the liquid solder's surface tension.
+| **Hot Air Station** | This makes removing parts a snap if mistakes were made. It can also be used to position parts using the liquid solder's surface tension.
 | **Solder Paste** | Using a hot air station with solder paste can make assembly a breeze.
 | **Stencil** | A piece of metal with holes cut out for where the solder paste can be scraped over. Most PCB fabricators offer stencils for a relatively small fee.
 

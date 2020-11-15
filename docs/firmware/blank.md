@@ -6,4 +6,7 @@ author_profile: false
 sidebar:
   nav: "docs"
 ---
-Here will be an explanation and example of a blank sketch for this particular board
+<div class="notice--warning">
+  <h4>This page is a work in progress</h4>
+  <p>I'm currently working on adding content to this page, make sure to check back later!</p>
+</div>
