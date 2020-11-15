@@ -53,7 +53,7 @@ Using masking tape (or other low-tac tape), position the WiFi module so that the
 	<a href="{{site.baseurl}}/docs/board/assets/assembly/esp32_taped_2.jpg"><img src="{{site.baseurl}}/docs/board/assets/assembly/esp32_taped_2.jpg"></a>
 </figure>
 
-You can have the tape cover one side of the module. Solder the side you can, and the module should be mounted securely enough to remove the tape.
+You can have the tape cover one side of the module. Solder the side you can, and the module should be mounted securely enough to remove the tape. Make sure to solder the other side that was previously under the tape.
 
 <figure style="max-width: 400px;" class="align-center">
 	<a href="{{site.baseurl}}/docs/board/assets/assembly/esp32_soldered.jpg"><img src="{{site.baseurl}}/docs/board/assets/assembly/esp32_soldered.jpg"></a>
@@ -66,7 +66,7 @@ You can have the tape cover one side of the module. Solder the side you can, and
 	<a href="{{site.baseurl}}/docs/board/assets/assembly/shift_packaged.jpg"><img src="{{site.baseurl}}/docs/board/assets/assembly/shift_packaged.jpg"></a>
 </figure>
 
-Next up is the shift register `U2`.
+Next up is the shift register `U2`. Begin by adding solder to one of the corner pads, and while keeping the solder liquid bring the IC onto the footprint and into position.
 
 {: .notice--warning}
 This device is "upside down" relative to the top of the board. Make sure the IC is correctly positioned with the Pin 1 marking aligned with the white dot on the board.
@@ -116,7 +116,7 @@ The voltage regulator `U1` is up next. This part should be straight forward, as 
     <figcaption>10kΩ, 1μF, 10μF</figcaption>
 </figure>
 
-We're almost there. For all of these parts there is no wrong direction for
+We're almost there. For all of these parts there is no wrong direction for how they are attached.
 
 Start with the resistors, which are all the same value: 10 kΩ.
 
