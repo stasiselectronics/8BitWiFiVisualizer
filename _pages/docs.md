@@ -6,7 +6,7 @@ sidebar:
   nav: "docs"
 ---
 {: .notice--warning}
-The docs are still a work in progress, but is actively being updated. Make sure to check back later for the finished docs!
+The docs are still a work in progress. Make sure to check back later for any updates!
 
 Here you can find more details about how the 8 Bit WiFi Visualizer works, how it was designed, and find instructions to assemble your own!
 
@@ -18,7 +18,7 @@ There is a navigation menu with all the pages within the documentation. If you'r
   Add a new Issue on the Github repository with a description of your question or problem and I'll be able to help!</b></p>
 </div>
 
-[Create a New Issue!](https://github.com/stasiselectronics/8BitWiFiVisualizer/issues/new){: .btn .btn--success .btn--large}  
+[Create a New Issue!](https://github.com/stasiselectronics/8BitWiFiVisualizer/issues/new){: .btn .btn--success .btn--large}
 *Creating issues requires a Github account*
 
 ## Hardware

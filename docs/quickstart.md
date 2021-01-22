@@ -8,7 +8,7 @@ sidebar:
 ---
 If you've purchased your very own 8 Bit WiFi Visualizer, here's what happens when you power it up
 
-# Pluggin In
+# Plugging In
 
 The board accepts micro USB cables and will immediately turn on and begin it's start up functions.
 
