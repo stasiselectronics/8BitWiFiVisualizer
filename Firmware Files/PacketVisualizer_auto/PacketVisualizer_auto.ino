@@ -58,7 +58,12 @@ void setup() {
   Serial.begin(115200);                // begin Serial port and set the baud rate to 115200, feel free to change this if you want
   Serial.print("\n\n\n");              // helps to clear the application dialogue and the ESP8266's boot dialogue
   Serial.println("Auto Selecting Channel");
-  
+
+  // Arduino ESP8266 Core 3.0.2 changed the AnalogWrite range from 12 bit to 8 bit
+  // The new ranges are from 0-255 instead of 0-1023
+  // Page 15 of the release documentation offers the following function to fix this without changing
+  // the values in the application
+  analogWriteRange(1023);
     
   // GPIO Port Configuration
   Serial.println("Initializing Pins");
